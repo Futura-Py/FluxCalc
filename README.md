@@ -4,13 +4,11 @@
 ![image](https://user-images.githubusercontent.com/86362423/151488091-edb39e7c-67a6-4f74-ac77-37220d383e06.png)
   
 ## About Fluent-Python-Calculator:
-  A very simple calculator with a modern UI made in Python thanks for the stunning [Sun-Valley-ttk-theme](https://github.com/rdbende/Sun-Valley-ttk-theme). Also this is my first project ever in my life! Feel free to open an issue or pull requests.
+  A very simple calculator with a modern UI made in Python thanks for the stunning [Sun-Valley-ttk-theme](https://github.com/rdbende/Sun-Valley-ttk-theme) and Segoe UI Variable font. This is my first project ever in my life so feel free to open an issue or pull requests to help me finish the project!
   
 ## Use the calculator
 - Make sure you have a code editor (VS code, Notepad ++,..) and Python installed.   
-- Download theme folder from [Sun-Valley-ttk-theme](https://github.com/rdbende/Sun-Valley-ttk-theme) and sun-valley.tcl from my repo.
-- Place it in a folder.
- ![image](https://user-images.githubusercontent.com/86362423/151494059-dc4667f5-9ea7-4eeb-9c0e-a09e0854e8a2.png)
+- Download the file in release
 - You can double click to run the program or open with a code editor to edit it
 
 
