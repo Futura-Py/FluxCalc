@@ -1,7 +1,6 @@
 # Fluent-Python-Calculator
 **A simple Python calculator with Sun-Valley-ttk-theme**
-
-![image](https://user-images.githubusercontent.com/86362423/151488091-edb39e7c-67a6-4f74-ac77-37220d383e06.png)
+![image](https://user-images.githubusercontent.com/86362423/151513477-16dd98f6-c532-4dca-bb61-685c9fc303e6.png)
   
 ## About Fluent-Python-Calculator:
   A very simple calculator with a modern UI made in Python thanks for the stunning [Sun-Valley-ttk-theme](https://github.com/rdbende/Sun-Valley-ttk-theme) and Segoe UI Variable font. This is my first project ever in my life so feel free to open an issue or pull requests to help me finish the project!
