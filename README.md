@@ -12,12 +12,12 @@
 
 
 ### Dark/Light mode images 
-Light mode
-![image](https://user-images.githubusercontent.com/86362423/151490474-7e15a415-983e-43ad-a0cc-9ca1bd184ff8.png)
+Light mode:
+![image](https://user-images.githubusercontent.com/86362423/151521951-a37fca34-93d2-4afd-b7fb-0e96afd12c70.png)
 
 
-Dark mode
-![image](https://user-images.githubusercontent.com/86362423/151490883-cd76c935-2d61-4cf4-a6b6-bef82b3bc8c3.png)
+Dark mode:
+![image](https://user-images.githubusercontent.com/86362423/151522188-8bb2fb0f-1fb8-4ee7-b0b3-119e00d7d663.png)
 
  
 ### Future development
