@@ -18,3 +18,4 @@ Dark mode
  - [ ] Improve button size
  - [ ] Add 'error' message into the app
  - [ ] Improve UI
+ - [ ] Add proper changing dark/light mode
