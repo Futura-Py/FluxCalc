@@ -22,7 +22,7 @@ Dark mode
 
  
 ### Future development
- - [ ] Improve button size
+ - [X] Improve button size
  - [ ] Add 'error' message into the app
  - [ ] Improve UI
  - [ ] Add proper changing dark/light mode
