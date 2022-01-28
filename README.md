@@ -4,7 +4,7 @@
 ![image](https://user-images.githubusercontent.com/86362423/151488091-edb39e7c-67a6-4f74-ac77-37220d383e06.png)
   
 ## About Fluent-Python-Calculator:
-  A very simple calculator and a better UI made in Python thanks for the stunning [Sun-Valley-ttk-theme](https://github.com/rdbende/Sun-Valley-ttk-theme).Also this is my first project ever in my life! Feel free to open an issue or pull requests.
+  A very simple calculator and a better UI made in Python thanks for the stunning [Sun-Valley-ttk-theme](https://github.com/rdbende/Sun-Valley-ttk-theme). Also this is my first project ever in my life! Feel free to open an issue or pull requests.
   
 ## Use the calculator
 - Make sure you have a code editor (VS code, Notepad ++,..) and Python installed.   
