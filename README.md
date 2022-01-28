@@ -5,6 +5,15 @@
   
 ## About Fluent-Python-Calculator:
   A very simple calculator and a better UI made in Python thanks for the stunning [Sun-Valley-ttk-theme](https://github.com/rdbende/Sun-Valley-ttk-theme).Also this is my first project ever in my life! Feel free to open an issue or pull requests.
+  
+## Use the calculator
+- Make sure you have a code editor (VS code, Notepad ++,..) and Python installed.   
+- Download theme folder from [Sun-Valley-ttk-theme](https://github.com/rdbende/Sun-Valley-ttk-theme) and sun-valley.tcl from my repo.
+- Place it in a folder.
+ ![image](https://user-images.githubusercontent.com/86362423/151494059-dc4667f5-9ea7-4eeb-9c0e-a09e0854e8a2.png)
+- You can double click to run the program or open with a code editor to edit it
+
+
 ### Dark/Light mode images 
 Light mode
 ![image](https://user-images.githubusercontent.com/86362423/151490474-7e15a415-983e-43ad-a0cc-9ca1bd184ff8.png)
