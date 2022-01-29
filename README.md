@@ -35,6 +35,6 @@ Dark mode:
  - [X] Improve button size
  - [ ] Add 'error' message into the app
  - [ ] Improve UI
- - [ ] Add proper changing dark/light mode
+ - [X] Add proper changing dark/light mode (thanks for [TimothyMalahy](https://github.com/TimothyMalahy))
  - [X] Change to exe? (done)
  - [X] Add icon
