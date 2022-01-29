@@ -6,8 +6,6 @@ import json
 with open("config.json", "r") as config:
     data = json.load(config)
 
-print(data)
-
 def btnClick(numbers) :
     global operator
     operator=operator+str(numbers)
