@@ -2,6 +2,18 @@ from tkinter import ttk
 import tkinter as tk
 from tkinter import*
 
+cal = Tk()
+cal.title('Fluent Calculator')
+
+menubar = Menu(cal)
+darkmode = tk.BooleanVar()
+darkmode.set(False)
+
+operator=""
+tex_input= StringVar()
+cal.geometry('229x300')
+cal.iconbitmap('Calculator.ico')
+
 def btnClick(numbers) :
     global operator
     operator=operator+str(numbers)
@@ -13,10 +25,14 @@ def btnClearDisplay():
     operator=""
 
 def btnEqualsInput():
-    global operator
-    sumup=str(eval(operator))
-    tex_input.set(sumup)
-    operator=""
+    try:
+      global operator
+      sumup=str(eval(operator))
+      tex_input.set(sumup)
+      operator=""
+    except:
+     tex_input.set("meow")
+     operator=""
 
 def setdarkmode():
     if darkmode.get() == 1:
@@ -26,19 +42,7 @@ def setdarkmode():
         # cal.tk.call("source", "sun-valley.tcl")
         cal.tk.call("set_theme", "light") 
 
-cal = Tk()
-cal.title('Fluent Calculator')
-
-menubar = Menu(cal)
-darkmode = tk.BooleanVar()
-darkmode.set(False)
-
 menubar.add_checkbutton(label="Mode", onvalue=1, offvalue=0, variable=darkmode, command=setdarkmode)
-
-operator=""
-tex_input= StringVar()
-cal.geometry('229x298')
-cal.iconbitmap('Calculator.ico')
 
 cal.grid_columnconfigure(0,weight=1)
 cal.grid_columnconfigure(1,weight=1)
