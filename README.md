@@ -18,23 +18,29 @@
 ![image](https://user-images.githubusercontent.com/86362423/151649391-ae6d8c62-cbc3-4d47-a3fc-588f0d243a2c.png)
 
 2. **If you have have a code editor (VS code, Notepad ++,..) and Python installed:**
-- Download the file in release
+- Download the source code in release
 - You can double click to run the program or open with a code editor to edit it
 
 
 ### Dark/Light mode images 
-Light mode:
 ![image](https://user-images.githubusercontent.com/86362423/151646518-ecd26dd4-a35d-4e94-bbc2-6cd6703241eb.png)
+<div align="center">
+Light mode
+</div>
+<br>
+<br>
 
 
-Dark mode:
 ![image](https://user-images.githubusercontent.com/86362423/151522188-8bb2fb0f-1fb8-4ee7-b0b3-119e00d7d663.png)
+<div align="center">
+Dark mode
+</div>
 
  
 ### Future development
  - [X] Improve button size
  - [ ] Add 'error' message into the app
  - [ ] Improve UI
- - [X] Add proper changing dark/light mode (thanks for [TimothyMalahy](https://github.com/TimothyMalahy))
+ - [X] Add proper changing dark/light mode (thanks for [Timothy Malahy](https://github.com/TimothyMalahy))
  - [X] Change to exe? (done)
  - [X] Add icon
