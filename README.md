@@ -6,7 +6,11 @@
   A very simple calculator with a modern UI made in Python thanks for the stunning [Sun-Valley-ttk-theme](https://github.com/rdbende/Sun-Valley-ttk-theme) and Segoe UI Variable font. This is my first project ever in my life so feel free to open an issue or pull requests to help me finish the project!
   
 ## Use the calculator
-- Make sure you have a code editor (VS code, Notepad ++,..) and Python installed.   
+1. **If you don't have anything and want to check out my project:**
+- Check [releases](https://github.com/HuyHung1408/Fluent-Python-Calculator/releases) for the Fluent.Calculator.exe.file.zip and extract it, double click the exe file to run.
+- One more note, do not delete the theme folder and the tcl file, both of them is important for Fluent-Python-Calculator to work correctly!
+
+2. **If you have have a code editor (VS code, Notepad ++,..) and Python installed:**
 - Download the file in release
 - You can double click to run the program or open with a code editor to edit it
 
@@ -25,4 +29,4 @@ Dark mode:
  - [ ] Add 'error' message into the app
  - [ ] Improve UI
  - [ ] Add proper changing dark/light mode
- - [X] Change to exe? (maybe)
+ - [X] Change to exe? (done)
