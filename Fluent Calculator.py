@@ -23,6 +23,7 @@ cal.title('Fluent Calculator')
 operator=""
 tex_input= StringVar()
 cal.geometry('229x279')
+cal.iconbitmap(r'E:\File chung\File Python\Fluent Calculator\Calculator.ico')  #Replace it with the icon you want
 
 cal.grid_columnconfigure(0,weight=1)
 cal.grid_columnconfigure(1,weight=1)
