@@ -29,7 +29,6 @@ def setdarkmode():
         cal.tk.call("set_theme", "dark")  #You can change to "dark"
         data['darkmode'] = 'True'
     else:
-        # cal.tk.call("source", "sun-valley.tcl")
         cal.tk.call("set_theme", "light")  #You can change to "dark"
         data['darkmode'] = 'False'
 
