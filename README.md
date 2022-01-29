@@ -4,7 +4,7 @@
 </div>
 
 **A simple Python calculator with Sun-Valley-ttk-theme**
-![image](https://user-images.githubusercontent.com/86362423/151646480-70fe20f2-6e75-4a11-8fe0-b79dad06d101.png)
+![image](https://user-images.githubusercontent.com/86362423/151662244-a50a9c81-890c-4391-8543-b32404a4d278.png)
   
 ## About Fluent-Python-Calculator:
   A very simple calculator with a modern UI made in Python thanks for the stunning [Sun-Valley-ttk-theme](https://github.com/rdbende/Sun-Valley-ttk-theme) and Segoe UI Variable font. This is my first project ever in my life so feel free to open an issue or pull requests to help me finish the project!
@@ -21,17 +21,17 @@
 - Download the source code in release
 - You can double click to run the program or open with a code editor to edit it
 
-
+**Changing dark/light theme**: click at "mode" button
 ### Dark/Light mode images 
-![image](https://user-images.githubusercontent.com/86362423/151646518-ecd26dd4-a35d-4e94-bbc2-6cd6703241eb.png)
+
+![image](https://user-images.githubusercontent.com/86362423/151662266-c68b1476-16a4-4bff-b667-10eaab74b4ae.png)
 <div align="center">
 Light mode
 </div>
 <br>
 <br>
 
-
-![image](https://user-images.githubusercontent.com/86362423/151522188-8bb2fb0f-1fb8-4ee7-b0b3-119e00d7d663.png)
+![image](https://user-images.githubusercontent.com/86362423/151662284-4b966d7e-e0ac-4280-b339-d3fc4b46729c.png)
 <div align="center">
 Dark mode
 </div>
