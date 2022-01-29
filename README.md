@@ -10,6 +10,8 @@
 - Check [releases](https://github.com/HuyHung1408/Fluent-Python-Calculator/releases) for the Fluent.Calculator.exe.file.zip and extract it, double click the exe file to run.
 - One more note, do not delete the theme folder and the tcl file, both of them is important for Fluent-Python-Calculator to work correctly!
 
+![image](https://user-images.githubusercontent.com/86362423/151644812-6c6885f4-a497-4555-bb70-e632521b7a68.png)
+
 2. **If you have have a code editor (VS code, Notepad ++,..) and Python installed:**
 - Download the file in release
 - You can double click to run the program or open with a code editor to edit it
@@ -30,3 +32,4 @@ Dark mode:
  - [ ] Improve UI
  - [ ] Add proper changing dark/light mode
  - [X] Change to exe? (done)
+ - [ ] Add icon
