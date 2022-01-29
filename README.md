@@ -7,7 +7,7 @@
   
 ## Use the calculator
 1. **If you don't have anything and want to check out my project:** <br>
-⚠️ Currently since antivirus marked it as a virus because I converted it into .exe using pyinstaller, if you still think it is a virus, check the python file.
+⚠️ Currently antivirus marked it as a virus (and of course, it's not) because I converted it into .exe using pyinstaller, if you still think it is a virus, check the python file.
 - Check [releases](https://github.com/HuyHung1408/Fluent-Python-Calculator/releases) for the Fluent.Calculator.zip and extract it, double click the exe file to run.
 - One more note, do not delete the theme folder, the tcl file and the ico file, all of them is important for Fluent-Python-Calculator to work correctly!
 
