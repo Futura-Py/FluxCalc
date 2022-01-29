@@ -18,11 +18,26 @@ def btnEqualsInput():
     tex_input.set(sumup)
     operator=""
 
+def setdarkmode():
+    if darkmode.get() == 1:
+        # cal.tk.call("source", "sun-valley.tcl")
+        cal.tk.call("set_theme", "dark")  #You can change to "dark"
+    else:
+        # cal.tk.call("source", "sun-valley.tcl")
+        cal.tk.call("set_theme", "light")  #You can change to "dark"
+
 cal = Tk()
 cal.title('Fluent Calculator')
+
+menubar = Menu(cal)
+darkmode = tk.BooleanVar()
+darkmode.set(False)
+
+menubar.add_checkbutton(label="Dark Mode", onvalue=1, offvalue=0, variable=darkmode, command=setdarkmode)
+
 operator=""
 tex_input= StringVar()
-cal.geometry('229x279')
+cal.geometry('229x289')
 cal.iconbitmap('Calculator.ico')
 
 cal.grid_columnconfigure(0,weight=1)
@@ -67,4 +82,5 @@ x_cordinate = int((cal.winfo_screenwidth() / 2) - (cal.winfo_width() / 2))
 y_cordinate = int((cal.winfo_screenheight() / 2) - (cal.winfo_height() / 2))
 cal.resizable(False, False)
 
+cal.config(menu=menubar)
 cal.mainloop()
