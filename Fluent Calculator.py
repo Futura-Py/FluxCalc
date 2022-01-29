@@ -6,8 +6,6 @@ import json
 with open("config.json", "r") as config:
     data = json.load(config)
 
-<<<<<<< HEAD
-=======
 print(data)
 
 cal = Tk()
@@ -22,7 +20,6 @@ tex_input= StringVar()
 cal.geometry('229x300')
 cal.iconbitmap('Calculator.ico')
 
->>>>>>> 402eb44e5f4d5c211a4427f750f4a4e42838b629
 def btnClick(numbers) :
     global operator
     operator=operator+str(numbers)
