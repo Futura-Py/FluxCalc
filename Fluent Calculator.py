@@ -6,8 +6,6 @@ import json
 with open("config.json", "r") as config:
     data = json.load(config)
 
-print(data)
-
 cal = Tk()
 cal.title('Fluent Calculator')
 
