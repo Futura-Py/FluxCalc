@@ -25,4 +25,4 @@ Dark mode:
  - [ ] Add 'error' message into the app
  - [ ] Improve UI
  - [ ] Add proper changing dark/light mode
- - [ ] Change to exe? (maybe)
+ - [X] Change to exe? (maybe)
