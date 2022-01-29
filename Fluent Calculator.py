@@ -6,6 +6,23 @@ import json
 with open("config.json", "r") as config:
     data = json.load(config)
 
+<<<<<<< HEAD
+=======
+print(data)
+
+cal = Tk()
+cal.title('Fluent Calculator')
+
+menubar = Menu(cal)
+darkmode = tk.BooleanVar()
+darkmode.set(False)
+
+operator=""
+tex_input= StringVar()
+cal.geometry('229x300')
+cal.iconbitmap('Calculator.ico')
+
+>>>>>>> 402eb44e5f4d5c211a4427f750f4a4e42838b629
 def btnClick(numbers) :
     global operator
     operator=operator+str(numbers)
@@ -17,10 +34,14 @@ def btnClearDisplay():
     operator=""
 
 def btnEqualsInput():
-    global operator
-    sumup=str(eval(operator))
-    tex_input.set(sumup)
-    operator=""
+    try:
+      global operator
+      sumup=str(eval(operator))
+      tex_input.set(sumup)
+      operator=""
+    except:
+     tex_input.set("meow")
+     operator=""
 
 def setdarkmode():
     if darkmode.get() == True:
@@ -50,10 +71,7 @@ else:
 
 menubar.add_checkbutton(label="Dark Mode", onvalue=True, offvalue=False, variable=darkmode, command=setdarkmode)
 
-operator=""
-tex_input= StringVar()
-cal.geometry('229x289')
-cal.iconbitmap('Calculator.ico')
+menubar.add_checkbutton(label="Mode", onvalue=1, offvalue=0, variable=darkmode, command=setdarkmode)
 
 cal.grid_columnconfigure(0,weight=1)
 cal.grid_columnconfigure(1,weight=1)
