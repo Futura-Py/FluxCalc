@@ -1,6 +1,12 @@
 from tkinter import ttk
 import tkinter as tk
-from tkinter import*
+from tkinter import *
+import json
+
+with open("config.json", "r") as config:
+    data = json.load(config)
+
+print(data)
 
 def btnClick(numbers) :
     global operator
@@ -19,21 +25,32 @@ def btnEqualsInput():
     operator=""
 
 def setdarkmode():
-    if darkmode.get() == 1:
-        # cal.tk.call("source", "sun-valley.tcl")
+    if darkmode.get() == True:
         cal.tk.call("set_theme", "dark")  #You can change to "dark"
+        data['darkmode'] = 'True'
     else:
-        # cal.tk.call("source", "sun-valley.tcl")
         cal.tk.call("set_theme", "light")  #You can change to "dark"
+        data['darkmode'] = 'False'
+
+    updateConfig()
+
+def updateConfig():
+    with open("config.json", "w") as jsonfile:
+        json.dump(data, jsonfile)
+        jsonfile.close()
 
 cal = Tk()
 cal.title('Fluent Calculator')
 
 menubar = Menu(cal)
 darkmode = tk.BooleanVar()
-darkmode.set(False)
 
-menubar.add_checkbutton(label="Dark Mode", onvalue=1, offvalue=0, variable=darkmode, command=setdarkmode)
+if data['darkmode'] == "True":
+    darkmode.set(True)
+else:
+    darkmode.set(False)
+
+menubar.add_checkbutton(label="Dark Mode", onvalue=True, offvalue=False, variable=darkmode, command=setdarkmode)
 
 operator=""
 tex_input= StringVar()
@@ -73,7 +90,7 @@ Multiple=ttk.Button(cal, text="x", command=lambda:btnClick("*")). grid(row=4, co
 Divsion=ttk.Button(cal, text=":", command=lambda:btnClick("/")). grid(row=5, column=3, padx= 8, pady= 0, ipadx=5, ipady=5)
 
 cal.tk.call("source", "sun-valley.tcl")
-cal.tk.call("set_theme", "light")  #You can change to "dark"
+setdarkmode() # Calls the function initially to repreasent what user expects from config, if not True then defaults to light mode
 
 #Min width for the calculator
 cal.update()
