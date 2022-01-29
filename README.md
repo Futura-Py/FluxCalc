@@ -7,8 +7,8 @@
   
 ## Use the calculator
 1. **If you don't have anything and want to check out my project:**
-- Check [releases](https://github.com/HuyHung1408/Fluent-Python-Calculator/releases) for the Fluent.Calculator.exe.file.zip and extract it, double click the exe file to run.
-- One more note, do not delete the theme folder and the tcl file, both of them is important for Fluent-Python-Calculator to work correctly!
+- Check [releases](https://github.com/HuyHung1408/Fluent-Python-Calculator/releases) for the Fluent.Calculator.zip and extract it, double click the exe file to run.
+- One more note, do not delete the theme folder, the tcl file and the ico file, all of them is important for Fluent-Python-Calculator to work correctly!
 
 ![image](https://user-images.githubusercontent.com/86362423/151644812-6c6885f4-a497-4555-bb70-e632521b7a68.png)
 
