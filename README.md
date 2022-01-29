@@ -10,7 +10,7 @@
 - Check [releases](https://github.com/HuyHung1408/Fluent-Python-Calculator/releases) for the Fluent.Calculator.zip and extract it, double click the exe file to run.
 - One more note, do not delete the theme folder, the tcl file and the ico file, all of them is important for Fluent-Python-Calculator to work correctly!
 
-![image](https://user-images.githubusercontent.com/86362423/151644812-6c6885f4-a497-4555-bb70-e632521b7a68.png)
+![image](https://user-images.githubusercontent.com/86362423/151649391-ae6d8c62-cbc3-4d47-a3fc-588f0d243a2c.png)
 
 2. **If you have have a code editor (VS code, Notepad ++,..) and Python installed:**
 - Download the file in release
