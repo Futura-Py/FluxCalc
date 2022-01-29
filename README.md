@@ -1,4 +1,8 @@
+<div align="center">
+ 
 # Fluent-Python-Calculator <img align="left" src="https://github.com/HuyHung1408/Fluent-Python-Calculator/blob/main/Calculator.ico" height="38"></a> 
+</div>
+
 **A simple Python calculator with Sun-Valley-ttk-theme**
 ![image](https://user-images.githubusercontent.com/86362423/151646480-70fe20f2-6e75-4a11-8fe0-b79dad06d101.png)
   
