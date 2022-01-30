@@ -1,18 +1,10 @@
 from tkinter import ttk
 import tkinter as tk
-from tkinter import*
+from tkinter import *
+import json
 
-cal = Tk()
-cal.title('Fluent Calculator')
-
-menubar = Menu(cal)
-darkmode = tk.BooleanVar()
-darkmode.set(False)
-
-operator=""
-tex_input= StringVar()
-cal.geometry('229x300')
-cal.iconbitmap('Calculator.ico')
+with open("config.json", "r") as config:
+    data = json.load(config)
 
 def btnClick(numbers) :
     global operator
@@ -25,24 +17,43 @@ def btnClearDisplay():
     operator=""
 
 def btnEqualsInput():
-    try:
-      global operator
-      sumup=str(eval(operator))
-      tex_input.set(sumup)
-      operator=""
-    except:
-     tex_input.set("meow")
-     operator=""
+    global operator
+    sumup=str(eval(operator))
+    tex_input.set(sumup)
+    operator=""
 
 def setdarkmode():
-    if darkmode.get() == 1:
-        # cal.tk.call("source", "sun-valley.tcl")
-        cal.tk.call("set_theme", "dark") 
+    if darkmode.get() == True:
+        cal.tk.call("set_theme", "dark")
+        data['darkmode'] = 'True'
     else:
-        # cal.tk.call("source", "sun-valley.tcl")
-        cal.tk.call("set_theme", "light") 
+        cal.tk.call("set_theme", "light")
+        data['darkmode'] = 'False'
 
-menubar.add_checkbutton(label="Mode", onvalue=1, offvalue=0, variable=darkmode, command=setdarkmode)
+    updateConfig()
+
+def updateConfig():
+    with open("config.json", "w") as jsonfile:
+        json.dump(data, jsonfile)
+        jsonfile.close()
+
+cal = Tk()
+cal.title('Fluent Calculator')
+
+menubar = Menu(cal)
+darkmode = tk.BooleanVar()
+
+if data['darkmode'] == "True":
+    darkmode.set(True)
+else:
+    darkmode.set(False)
+
+menubar.add_checkbutton(label="Dark Mode", onvalue=True, offvalue=False, variable=darkmode, command=setdarkmode)
+
+operator=""
+tex_input= StringVar()
+cal.geometry('229x289')
+cal.iconbitmap('Calculator.ico')
 
 cal.grid_columnconfigure(0,weight=1)
 cal.grid_columnconfigure(1,weight=1)
@@ -77,7 +88,7 @@ Multiple=ttk.Button(cal, text="x", command=lambda:btnClick("*")). grid(row=4, co
 Divsion=ttk.Button(cal, text=":", command=lambda:btnClick("/")). grid(row=5, column=3, padx= 8, pady= 0, ipadx=5, ipady=5)
 
 cal.tk.call("source", "sun-valley.tcl")
-cal.tk.call("set_theme", "light")
+setdarkmode() # Calls the function initially to repreasent what user expects from config, if not True then defaults to light mode
 
 #Min width for the calculator
 cal.update()
