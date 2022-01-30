@@ -17,10 +17,14 @@ def btnClearDisplay():
     operator=""
 
 def btnEqualsInput():
-    global operator
-    sumup=str(eval(operator))
-    tex_input.set(sumup)
-    operator=""
+    try:
+      global operator
+      sumup=str(eval(operator))
+      tex_input.set(sumup)
+      operator=""
+    except:
+     tex_input.set("Meow")
+     operator=""
 
 def setdarkmode():
     if darkmode.get() == True:
@@ -52,7 +56,7 @@ menubar.add_checkbutton(label="Dark Mode", onvalue=True, offvalue=False, variabl
 
 operator=""
 tex_input= StringVar()
-cal.geometry('229x289')
+cal.geometry('229x300')
 cal.iconbitmap('Calculator.ico')
 
 cal.grid_columnconfigure(0,weight=1)
