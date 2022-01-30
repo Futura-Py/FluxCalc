@@ -33,8 +33,8 @@ Dark mode:
  
 ### Future development
  - [X] Improve button size
- - [ ] Add 'error' message into the app
+ - [X] Add 'error' message into the app
  - [ ] Improve UI
- - [ ] Add proper changing dark/light mode
+ - [X] Add proper changing dark/light mode
  - [X] Change to exe? (done)
  - [X] Add icon
