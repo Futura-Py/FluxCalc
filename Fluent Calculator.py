@@ -52,7 +52,7 @@ if data['darkmode'] == "True":
 else:
     darkmode.set(False)
 
-menubar.add_checkbutton(label="Dark Mode", onvalue=True, offvalue=False, variable=darkmode, command=setdarkmode)
+menubar.add_checkbutton(label="Mode", onvalue=True, offvalue=False, variable=darkmode, command=setdarkmode)
 
 operator=""
 tex_input= StringVar()
@@ -70,26 +70,26 @@ txtDisplay = ttk.Entry(cal, textvariable=tex_input, font='12', justify='right').
 #First Column
 btn7=ttk.Button(cal, text="7", command=lambda:btnClick(7)).grid(row=1, column=0, padx= 8, pady= 5, ipadx=4, ipady=5)
 btn4=ttk.Button(cal, text="4", command=lambda:btnClick(4)).grid(row=2, column=0, padx= 8, pady= 5, ipadx=4, ipady=5)
-btn1=ttk.Button(cal, text="1", command=lambda:btnClick(1)).grid(row=4, column=0, padx= 8, pady= 5, ipadx=5, ipady=5)
-btn1=ttk.Button(cal, text="0", command=lambda:btnClick(0)).grid(row=5, column=0, padx= 8, pady= 5, ipadx=4, ipady=5)
+btn1=ttk.Button(cal, text="1", command=lambda:btnClick(1)).grid(row=3, column=0, padx= 8, pady= 5, ipadx=5, ipady=5)
+btn1=ttk.Button(cal, text="0", command=lambda:btnClick(0)).grid(row=4, column=0, padx= 8, pady= 5, ipadx=4, ipady=5)
 
 #Second Column
 btn8=ttk.Button(cal, text="8", command=lambda:btnClick(8)).grid(row=1, column=1, padx= 0, pady= 0, ipadx=4, ipady=5)
 btn5=ttk.Button(cal, text="5", command=lambda:btnClick(5)).grid(row=2, column=1, padx= 0, pady= 0, ipadx=4, ipady=5)
-btn2=ttk.Button(cal, text="2", command=lambda:btnClick(2)).grid(row=4, column=1, padx= 0, pady= 0, ipadx=4, ipady=5)
-btnClear=ttk.Button(cal, text="C", style="Accent.TButton", command=btnClearDisplay).grid(row=5, column=1, padx= 10, pady= 0, ipadx=3, ipady=5)
+btn2=ttk.Button(cal, text="2", command=lambda:btnClick(2)).grid(row=3, column=1, padx= 0, pady= 0, ipadx=4, ipady=5)
+btnClear=ttk.Button(cal, text="C", style="Accent.TButton", command=btnClearDisplay).grid(row=4, column=1, padx= 10, pady= 0, ipadx=3, ipady=5)
 
 #Thỉrd Column
 btn9=ttk.Button(cal, text="9", command=lambda:btnClick(9)).grid(row=1, column=2, padx= 0, pady= 0, ipadx=4, ipady=5)
 btn6=ttk.Button(cal, text="6", command=lambda:btnClick(6)).grid(row=2, column=2, padx= 0, pady= 0, ipadx=4, ipady=5)
-btn3=ttk.Button(cal, text="3", command=lambda:btnClick(3)).grid(row=4, column=2, padx= 0, pady= 0, ipadx=4, ipady=5)
-equal=ttk.Button(cal, text="=", style="Accent.TButton", command=btnEqualsInput).grid(row=5, column=2, padx= 10, pady= 0, ipadx=2, ipady=5)
+btn3=ttk.Button(cal, text="3", command=lambda:btnClick(3)).grid(row=3, column=2, padx= 0, pady= 0, ipadx=4, ipady=5)
+equal=ttk.Button(cal, text="=", style="Accent.TButton", command=btnEqualsInput).grid(row=4, column=2, padx= 10, pady= 0, ipadx=2, ipady=5)
 
 #Fourth Column
 Addition=ttk.Button(cal, text="+",  command=lambda:btnClick("+")). grid(row=1, column=3, padx= 8, pady= 0, ipadx=3, ipady=5)
 Subtraction=ttk.Button(cal, text="-", command=lambda:btnClick("-")). grid(row=2, column=3, padx= 8, pady= 0, ipadx=4, ipady=5)
-Multiple=ttk.Button(cal, text="x", command=lambda:btnClick("*")). grid(row=4, column=3, padx= 8, pady= 0, ipadx=4, ipady=5)
-Divsion=ttk.Button(cal, text=":", command=lambda:btnClick("/")). grid(row=5, column=3, padx= 8, pady= 0, ipadx=5, ipady=5)
+Multiple=ttk.Button(cal, text="x", command=lambda:btnClick("*")). grid(row=3, column=3, padx= 8, pady= 0, ipadx=4, ipady=5)
+Divsion=ttk.Button(cal, text=":", command=lambda:btnClick("/")). grid(row=4, column=3, padx= 8, pady= 0, ipadx=5, ipady=5)
 
 cal.tk.call("source", "sun-valley.tcl")
 setdarkmode() # Calls the function initially to repreasent what user expects from config, if not True then defaults to light mode
