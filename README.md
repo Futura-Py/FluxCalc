@@ -42,7 +42,7 @@ Dark mode
  
 ### Future development
  - [X] Improve button size
- - [X] Add 'error' message into the app (done, coming soon)
+ - [X] Add 'error' message into the app
  - [ ] Improve UI
  - [X] Add proper changing dark/light mode (thanks for [Timothy Malahy](https://github.com/TimothyMalahy))
  - [X] Change to exe? (done)
