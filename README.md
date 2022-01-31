@@ -3,6 +3,7 @@
 # Fluent-Python-Calculator <img align="left" src="https://github.com/HuyHung1408/Fluent-Python-Calculator/blob/main/Calculator.ico" height="38"></a> 
 </div>
 
+⚠️ I will pause the project for a weeks due holiday session <br>
 **A simple Python calculator with Sun-Valley-ttk-theme**
 ![image](https://user-images.githubusercontent.com/86362423/151662244-a50a9c81-890c-4391-8543-b32404a4d278.png)
   
