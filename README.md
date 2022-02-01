@@ -14,15 +14,17 @@
 1. **If you don't have anything and want to check out my project:** <br>
 ⚠️ Currently antivirus marked it as a virus (and of course, it's not) because I converted it into .exe using pyinstaller, if you still think it is a virus, check the python file.
 - Check [releases](https://github.com/HuyHung1408/Fluent-Python-Calculator/releases) for the Fluent.Calculator.zip and extract it, double click the exe file to run.
-- One more note, do not delete the theme folder, the tcl file and the ico file, all of them is important for Fluent-Python-Calculator to work correctly!
-
-![image](https://user-images.githubusercontent.com/86362423/151649391-ae6d8c62-cbc3-4d47-a3fc-588f0d243a2c.png)
-
+- One more note, do not delete the theme folder, the tcl file, the ico file, and config file, all of them is important for Fluent-Python-Calculator to work correctly!
+ <div align="center">
+ 
+![image](https://user-images.githubusercontent.com/86362423/151813306-3332ee04-f2df-461e-ab84-009af42f748f.png)
+ </div>
+ 
 2. **If you have have a code editor (VS code, Notepad ++,..) and Python installed:**
 - Download the source code in release
 - You can double click to run the program or open with a code editor to edit it
 
-**Changing dark/light theme**: click at "mode" button
+**Changing dark/light theme**: click at "Mode" button
 ### Dark/Light mode images 
 
 ![image](https://user-images.githubusercontent.com/86362423/151662266-c68b1476-16a4-4bff-b667-10eaab74b4ae.png)
@@ -40,7 +42,7 @@ Dark mode
  
 ### Future development
  - [X] Improve button size
- - [X] Add 'error' message into the app (done, coming soon)
+ - [X] Add 'error' message into the app
  - [ ] Improve UI
  - [X] Add proper changing dark/light mode (thanks for [Timothy Malahy](https://github.com/TimothyMalahy))
  - [X] Change to exe? (done)
