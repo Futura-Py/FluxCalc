@@ -89,7 +89,7 @@ equal=ttk.Button(cal, text="=", style="Accent.TButton", command=btnEqualsInput).
 Addition=ttk.Button(cal, text="+",  command=lambda:btnClick("+")). grid(row=1, column=3, padx= 8, pady= 0, ipadx=3, ipady=5)
 Subtraction=ttk.Button(cal, text="-", command=lambda:btnClick("-")). grid(row=2, column=3, padx= 8, pady= 0, ipadx=4, ipady=5)
 Multiple=ttk.Button(cal, text="x", command=lambda:btnClick("*")). grid(row=3, column=3, padx= 8, pady= 0, ipadx=4, ipady=5)
-Divsion=ttk.Button(cal, text=":", command=lambda:btnClick("/")). grid(row=4, column=3, padx= 8, pady= 0, ipadx=5, ipady=5)
+Divsion=ttk.Button(cal, text="÷", command=lambda:btnClick("/")). grid(row=4, column=3, padx= 8, pady= 0, ipadx=3, ipady=5)
 
 cal.tk.call("source", "sun-valley.tcl")
 setdarkmode() # Calls the function initially to repreasent what user expects from config, if not True then defaults to light mode
