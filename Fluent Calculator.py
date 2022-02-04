@@ -26,6 +26,9 @@ def btnEqualsInput():
      tex_input.set("Meow")
      operator=""
 
+def checkIfNumberOrOperator(char):
+    return char.isdigit() or char == "+" or char == "-" or char == "/" or char == "*"     
+
 def setdarkmode():
     if darkmode.get() == True:
         cal.tk.call("set_theme", "dark")
@@ -59,13 +62,17 @@ tex_input= StringVar()
 cal.geometry('229x300')
 cal.iconbitmap('Calculator.ico')
 
+validation = cal.register(checkIfNumberOrOperator)
+
 cal.grid_columnconfigure(0,weight=1)
 cal.grid_columnconfigure(1,weight=1)
 cal.grid_columnconfigure(2,weight=1)
 cal.grid_columnconfigure(3,weight=1)
 
 #Entry to show result
-txtDisplay = ttk.Entry(cal, textvariable=tex_input, font='12', justify='right').grid(columnspan=5, pady=8)
+txtDisplay = ttk.Entry(cal, textvariable=tex_input, font='12', justify='right', validate="key", validatecommand=(validation, '%S'))
+txtDisplay.grid(columnspan=5, pady=8)
+txtDisplay.focus_set()
 
 #First Column
 btn7=ttk.Button(cal, text="7", command=lambda:btnClick(7)).grid(row=1, column=0, padx= 8, pady= 5, ipadx=4, ipady=5)
