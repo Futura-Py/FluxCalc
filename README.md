@@ -4,7 +4,7 @@
 </div>
 
 **A simple Python calculator with Sun-Valley-ttk-theme**
-![image](https://user-images.githubusercontent.com/86362423/151662244-a50a9c81-890c-4391-8543-b32404a4d278.png)
+![image](https://user-images.githubusercontent.com/86362423/153598046-5af35e77-fbc4-4115-a621-0fd1502950f2.png)
   
 ## About Fluent-Python-Calculator:
   A very simple calculator with a modern UI made in Python thanks for the stunning [Sun-Valley-ttk-theme](https://github.com/rdbende/Sun-Valley-ttk-theme) and Segoe UI Variable font. This is my first project ever in my life so feel free to open an issue or pull requests to help me finish the project!
@@ -23,17 +23,17 @@
 - Download the source code in release
 - You can double click to run the program or open with a code editor to edit it
 
-**Changing dark/light theme**: click at "Mode" button
+**Changing dark/light theme**: click at "M" button
 ### Dark/Light mode images 
 
-![image](https://user-images.githubusercontent.com/86362423/151662266-c68b1476-16a4-4bff-b667-10eaab74b4ae.png)
+![image](https://user-images.githubusercontent.com/86362423/153597631-fb2346b4-32ca-41a5-b855-218fa6826a7e.png)
 <div align="center">
 Light mode
 </div>
 <br>
 <br>
 
-![image](https://user-images.githubusercontent.com/86362423/151662284-4b966d7e-e0ac-4280-b339-d3fc4b46729c.png)
+![image](https://user-images.githubusercontent.com/86362423/153597305-447a3a24-f2b7-41dd-9b40-b45912d8d5e7.png)
 <div align="center">
 Dark mode
 </div>
@@ -42,7 +42,11 @@ Dark mode
 ### Future development
  - [X] Improve button size
  - [X] Add 'error' message into the app
- - [ ] Improve UI
+ - [X] Improve UI (thanks for @sumeshir26, @not-nef, and @im-coder-lg)
  - [X] Add proper changing dark/light mode (thanks for [Timothy Malahy](https://github.com/TimothyMalahy))
  - [X] Change to exe? (done)
  - [X] Add icon
+
+### Other awesome repositories:
+- [TimerX](https://github.com/Futura-Py/TimerX)
+- [Sun-Valley-ttk-theme](https://github.com/rdbende/Sun-Valley-ttk-theme)
