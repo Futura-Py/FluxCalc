@@ -25,25 +25,25 @@ def btnEqualsInput():
      tex_input.set("Error")
      operator=""
 
+
 def change_theme():
     if cal.tk.call("ttk::style", "theme", "use") == "sun-valley-dark":
         cal.tk.call("set_theme", "light")
-        cal.update()
         bg_color = ttk.Style().lookup(".", "background")
         cal.wm_attributes("-transparent", bg_color)
         HWND = ctypes.windll.user32.GetForegroundWindow()
         GlobalBlur(HWND, Acrylic=True, Dark=False, hexColor=f"{bg_color}")
         cal.update()
-
     else:
         cal.tk.call("set_theme", "dark")
+        bg_color = ttk.Style().lookup(".", "background")
+        cal.wm_attributes("-transparent", bg_color)
+        HWND = ctypes.windll.user32.GetForegroundWindow()
+        GlobalBlur(HWND, Acrylic=True, Dark=True, hexColor=f"{bg_color}")
         cal.update()
 
 cal = Tk()
 cal.title('Fluent Calculator')
-
-menubar = Menu(cal)
-darkmode = tk.BooleanVar()
 
 operator=""
 tex_input= StringVar()
@@ -87,7 +87,8 @@ Multiple=ttk.Button(cal, text="x", command=lambda:btnClick("*")). grid(row=4, co
 Divsion=ttk.Button(cal, text="÷", command=lambda:btnClick("/")). grid(row=5, column=3, padx= 8, pady= 0, ipadx=3, ipady=5)
 
 cal.tk.call("source", "sun-valley.tcl")
-change_theme() # Calls the function initially to repreasent what user expects from config, if not True then defaults to light mode
+cal.tk.call("set_theme", "light")
+cal.update()
 
 #Min width for the calculator
 cal.update()
@@ -96,10 +97,10 @@ x_cordinate = int((cal.winfo_screenwidth() / 2) - (cal.winfo_width() / 2))
 y_cordinate = int((cal.winfo_screenheight() / 2) - (cal.winfo_height() / 2))
 cal.resizable(False, False)
 
-#Remove some lines because this looks better
-cal.update() 
+bg_color = ttk.Style().lookup(".", "background")
+cal.wm_attributes("-transparent", bg_color)
 HWND = ctypes.windll.user32.GetForegroundWindow()
-GlobalBlur(HWND, Acrylic=True, Dark=True)
+GlobalBlur(HWND, Acrylic=True, Dark=False, hexColor=f"{bg_color}")
+cal.update()
 
-cal.config(menu=menubar)
 cal.mainloop()
