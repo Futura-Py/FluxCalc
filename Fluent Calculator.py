@@ -25,7 +25,6 @@ def btnEqualsInput():
      tex_input.set("Error")
      operator=""
 
-
 def change_theme():
     if cal.tk.call("ttk::style", "theme", "use") == "sun-valley-dark":
         cal.tk.call("set_theme", "light")
@@ -59,7 +58,7 @@ cal.grid_columnconfigure(3,weight=1)
 txtDisplay = ttk.Entry(cal, textvariable=tex_input, font='50', justify='right').grid(columnspan=8, pady=8)
 
 #First Column
-btnM=ttk.Button(cal, text="M", command=change_theme).grid(row=1, column=0, padx= 8, pady= 8, ipadx=1, ipady=1)
+btnM=ttk.Button(cal, text="M", style="Accent.TButton", command=change_theme).grid(row=1, column=0, padx= 8, pady= 8, ipadx=1, ipady=1)
 btn7=ttk.Button(cal, text="7", command=lambda:btnClick(7)).grid(row=2, column=0, padx= 8, pady= 5, ipadx=4, ipady=5)
 btn4=ttk.Button(cal, text="4", command=lambda:btnClick(4)).grid(row=3, column=0, padx= 8, pady= 5, ipadx=4, ipady=5)
 btn1=ttk.Button(cal, text="1", command=lambda:btnClick(1)).grid(row=4, column=0, padx= 8, pady= 5, ipadx=5, ipady=5)
