@@ -1,6 +1,5 @@
 from distutils import command
 from tkinter import ttk
-import tkinter as tk
 from tkinter import *
 from BlurWindow.blurWindow import *
 import ctypes
@@ -47,7 +46,7 @@ cal.title('Fluent Calculator')
 
 operator=""
 tex_input= StringVar()
-cal.geometry('238x335')
+cal.geometry('238x325')
 cal.iconbitmap('Calculator.ico')
 
 cal.grid_columnconfigure(0,weight=1)
