@@ -4,6 +4,7 @@ import tkinter as tk
 from tkinter import *
 from BlurWindow.blurWindow import *
 import ctypes
+import sv_ttk
 
 def btnClick(numbers) :
     global operator
@@ -26,15 +27,15 @@ def btnEqualsInput():
      operator=""
 
 def change_theme():
-    if cal.tk.call("ttk::style", "theme", "use") == "sun-valley-dark":
-        cal.tk.call("set_theme", "light")
+    if sv_ttk.get_theme() == "dark":
+        sv_ttk.set_theme('light')
         bg_color = ttk.Style().lookup(".", "background")
         cal.wm_attributes("-transparent", bg_color)
         HWND = ctypes.windll.user32.GetForegroundWindow()
         GlobalBlur(HWND, Acrylic=True, Dark=False, hexColor=f"{bg_color}")
         cal.update()
     else:
-        cal.tk.call("set_theme", "dark")
+        sv_ttk.set_theme('dark')
         bg_color = ttk.Style().lookup(".", "background")
         cal.wm_attributes("-transparent", bg_color)
         HWND = ctypes.windll.user32.GetForegroundWindow()
@@ -85,8 +86,7 @@ Subtraction=ttk.Button(cal, text="-", command=lambda:btnClick("-")). grid(row=3,
 Multiple=ttk.Button(cal, text="x", command=lambda:btnClick("*")). grid(row=4, column=3, padx= 8, pady= 0, ipadx=4, ipady=5)
 Divsion=ttk.Button(cal, text="÷", command=lambda:btnClick("/")). grid(row=5, column=3, padx= 8, pady= 0, ipadx=3, ipady=5)
 
-cal.tk.call("source", "sun-valley.tcl")
-cal.tk.call("set_theme", "light")
+sv_ttk.set_theme("light")
 cal.update()
 
 #Min width for the calculator
