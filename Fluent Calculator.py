@@ -1,8 +1,8 @@
-from distutils import command
 from tkinter import *
 from tkinter import ttk
 from BlurWindow.blurWindow import *
 import ctypes
+import darkdetect
 import sv_ttk
 
 def btnClick(numbers) :
@@ -95,7 +95,6 @@ Divsion=ttk.Button(cal, text="÷", command=lambda:btnClick("/")). grid(row=5, co
 sv_ttk.set_theme("light")
 
 #Min width for the calculator
-cal.update()
 cal.minsize(cal.winfo_width(), cal.winfo_height())
 x_cordinate = int((cal.winfo_screenwidth() / 2) - (cal.winfo_width() / 2))
 y_cordinate = int((cal.winfo_screenheight() / 2) - (cal.winfo_height() / 2))
@@ -104,7 +103,12 @@ cal.resizable(False, False)
 bg_color = ttk.Style().lookup(".", "background")
 cal.wm_attributes("-transparent", bg_color)
 HWND = ctypes.windll.user32.GetForegroundWindow()
-GlobalBlur(HWND, Acrylic=True, Dark=False, hexColor=f"{bg_color}")
+if  not darkdetect.isDark():
+    sv_ttk.set_theme("dark")
+    GlobalBlur(HWND, Acrylic=True, Dark=True)
+else:
+    sv_ttk.set_theme("light")
+    GlobalBlur(HWND, Acrylic=True)
 cal.update()
 
 cal.mainloop()

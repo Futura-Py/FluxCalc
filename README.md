@@ -33,7 +33,9 @@ Light mode
 Dark mode
 </div>
 
- 
+### Want Mica?
+Recently I've found out a weird way to get Mica . It's a bit of unofficially by the way, in the future update I will try to add Mica without other program by using [win32mica](https://github.com/martinet101/win32mica)
+
 ### Future development
  - [X] Improve button size
  - [X] Add 'error' message into the app
