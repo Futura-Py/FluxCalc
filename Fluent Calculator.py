@@ -4,8 +4,6 @@ from BlurWindow.blurWindow import *
 import ctypes
 import darkdetect
 import sv_ttk
-import platform
-print(platform.release())
 
 def btnClick(numbers) :
     global operator
