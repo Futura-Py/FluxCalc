@@ -1,2 +1,3 @@
 BlurWindow
 sv-ttk
+darkdetect
