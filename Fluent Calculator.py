@@ -1,6 +1,6 @@
 from distutils import command
-from tkinter import ttk
 from tkinter import *
+from tkinter import ttk
 from BlurWindow.blurWindow import *
 import ctypes
 import sv_ttk
@@ -25,6 +25,13 @@ def btnEqualsInput():
      tex_input.set("Error")
      operator=""
 
+
+def backspace(self):
+  self.current = self.current[0:len(self.current) -1]
+
+def backspace(self):
+      self.current = self.current[:-1]
+
 def change_theme():
     if sv_ttk.get_theme() == "dark":
         sv_ttk.set_theme('light')
@@ -46,7 +53,7 @@ cal.title('Fluent Calculator')
 
 operator=""
 tex_input= StringVar()
-cal.geometry('238x325')
+cal.geometry('238x320')
 cal.iconbitmap('Calculator.ico')
 
 cal.grid_columnconfigure(0,weight=1)
@@ -55,7 +62,7 @@ cal.grid_columnconfigure(2,weight=1)
 cal.grid_columnconfigure(3,weight=1)
 
 #Entry to show result
-txtDisplay = ttk.Entry(cal, textvariable=tex_input, font='50', justify='right').grid(columnspan=8, pady=8)
+txtDisplay = ttk.Entry(cal, textvariable=tex_input, font='50', justify='right').grid(columnspan=4, pady=8)
 
 #First Column
 btnM=ttk.Button(cal, text="M", style="Accent.TButton", command=change_theme).grid(row=1, column=0, padx= 8, pady= 8, ipadx=1, ipady=1)
@@ -86,7 +93,6 @@ Multiple=ttk.Button(cal, text="x", command=lambda:btnClick("*")). grid(row=4, co
 Divsion=ttk.Button(cal, text="÷", command=lambda:btnClick("/")). grid(row=5, column=3, padx= 8, pady= 0, ipadx=3, ipady=5)
 
 sv_ttk.set_theme("light")
-cal.update()
 
 #Min width for the calculator
 cal.update()
