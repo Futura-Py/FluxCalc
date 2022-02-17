@@ -1,8 +1,7 @@
-from tkinter import *
 from tkinter import ttk
+from tkinter import *
 from BlurWindow.blurWindow import *
 import ctypes
-import darkdetect
 import sv_ttk
 
 def btnClick(numbers) :
@@ -15,6 +14,12 @@ def btnClearDisplay():
     tex_input.set("")
     operator=""
 
+def backspace(self):
+  self.current = self.current[0:len(self.current) -1]
+
+def backspace(self):
+      self.current = self.current[:-1]
+
 def btnEqualsInput():
     try:
       global operator
@@ -24,13 +29,6 @@ def btnEqualsInput():
     except:
      tex_input.set("Error")
      operator=""
-
-
-def backspace(self):
-  self.current = self.current[0:len(self.current) -1]
-
-def backspace(self):
-      self.current = self.current[:-1]
 
 def change_theme():
     if sv_ttk.get_theme() == "dark":
@@ -93,8 +91,10 @@ Multiple=ttk.Button(cal, text="x", command=lambda:btnClick("*")). grid(row=4, co
 Divsion=ttk.Button(cal, text="÷", command=lambda:btnClick("/")). grid(row=5, column=3, padx= 8, pady= 0, ipadx=3, ipady=5)
 
 sv_ttk.set_theme("light")
+cal.update()
 
 #Min width for the calculator
+cal.update()
 cal.minsize(cal.winfo_width(), cal.winfo_height())
 x_cordinate = int((cal.winfo_screenwidth() / 2) - (cal.winfo_width() / 2))
 y_cordinate = int((cal.winfo_screenheight() / 2) - (cal.winfo_height() / 2))
@@ -103,12 +103,7 @@ cal.resizable(False, False)
 bg_color = ttk.Style().lookup(".", "background")
 cal.wm_attributes("-transparent", bg_color)
 HWND = ctypes.windll.user32.GetForegroundWindow()
-if  not darkdetect.isDark():
-    sv_ttk.set_theme("dark")
-    GlobalBlur(HWND, Acrylic=True, Dark=True)
-else:
-    sv_ttk.set_theme("light")
-    GlobalBlur(HWND, Acrylic=True)
+GlobalBlur(HWND, Acrylic=True, Dark=False, hexColor=f"{bg_color}")
 cal.update()
 
 cal.mainloop()
