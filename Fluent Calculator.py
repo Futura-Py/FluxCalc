@@ -1,5 +1,5 @@
-from tkinter import *
 from tkinter import ttk
+from tkinter import *
 from BlurWindow.blurWindow import *
 import ctypes
 import sv_ttk
@@ -54,7 +54,7 @@ cal.grid_columnconfigure(2,weight=1)
 cal.grid_columnconfigure(3,weight=1)
 
 #Entry to show result
-txtDisplay = ttk.Entry(cal, textvariable=tex_input, font='50', justify='right').grid(columnspan=4, pady=8)
+txtDisplay = ttk.Entry(cal, textvariable=tex_input, font='50', justify='right').grid(columnspan=4, pady=8, ipadx=9)
 
 #First Column
 btnM=ttk.Button(cal, text="M", style="Accent.TButton", command=change_theme).grid(row=1, column=0, padx= 8, pady= 8, ipadx=1, ipady=1)
@@ -85,7 +85,6 @@ Multiple=ttk.Button(cal, text="x", command=lambda:btnClick("*")). grid(row=4, co
 Divsion=ttk.Button(cal, text="÷", command=lambda:btnClick("/")). grid(row=5, column=3, padx= 8, pady= 0, ipadx=3, ipady=5)
 
 sv_ttk.set_theme("light")
-
 #Min width for the calculator
 cal.update()
 cal.minsize(cal.winfo_width(), cal.winfo_height())
