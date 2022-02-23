@@ -1,5 +1,5 @@
-from tkinter import ttk
 from tkinter import *
+from tkinter import ttk
 from BlurWindow.blurWindow import *
 import ctypes
 import sv_ttk
@@ -45,7 +45,7 @@ cal.title('Fluent Calculator')
 
 operator=""
 tex_input= StringVar()
-cal.geometry('238x325')
+cal.geometry('238x320')
 cal.iconbitmap('Calculator.ico')
 
 cal.grid_columnconfigure(0,weight=1)
@@ -58,11 +58,10 @@ txtDisplay = ttk.Entry(cal, textvariable=tex_input, font='50', justify='right').
 
 #First Column
 btnM=ttk.Button(cal, text="M", style="Accent.TButton", command=change_theme).grid(row=1, column=0, padx= 8, pady= 8, ipadx=1, ipady=1)
-btnM=ttk.Button(cal, text="M", style="Accent.TButton", command=change_theme).grid(row=2, column=0, padx= 8, pady= 8, ipadx=1, ipady=1)
-btn7=ttk.Button(cal, text="7", command=lambda:btnClick(7)).grid(row=3, column=0, padx= 8, pady= 5, ipadx=4, ipady=5)
-btn4=ttk.Button(cal, text="4", command=lambda:btnClick(4)).grid(row=4, column=0, padx= 8, pady= 5, ipadx=4, ipady=5)
-btn1=ttk.Button(cal, text="1", command=lambda:btnClick(1)).grid(row=5, column=0, padx= 8, pady= 5, ipadx=5, ipady=5)
-btn1=ttk.Button(cal, text="0", command=lambda:btnClick(0)).grid(row=6, column=0, padx= 8, pady= 5, ipadx=4, ipady=5)
+btn7=ttk.Button(cal, text="7", command=lambda:btnClick(7)).grid(row=2, column=0, padx= 8, pady= 5, ipadx=4, ipady=5)
+btn4=ttk.Button(cal, text="4", command=lambda:btnClick(4)).grid(row=3, column=0, padx= 8, pady= 5, ipadx=4, ipady=5)
+btn1=ttk.Button(cal, text="1", command=lambda:btnClick(1)).grid(row=4, column=0, padx= 8, pady= 5, ipadx=5, ipady=5)
+btn1=ttk.Button(cal, text="0", command=lambda:btnClick(0)).grid(row=5, column=0, padx= 8, pady= 5, ipadx=4, ipady=5)
 
 #Second Column
 btnM=ttk.Button(cal, text=".", command=lambda:btnClick('.')).grid(row=1, column=1, padx= 8, pady= 8, ipadx=7, ipady=1)
@@ -86,7 +85,6 @@ Multiple=ttk.Button(cal, text="x", command=lambda:btnClick("*")). grid(row=4, co
 Divsion=ttk.Button(cal, text="÷", command=lambda:btnClick("/")). grid(row=5, column=3, padx= 8, pady= 0, ipadx=3, ipady=5)
 
 sv_ttk.set_theme("light")
-cal.update()
 
 #Min width for the calculator
 cal.update()
