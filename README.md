@@ -34,7 +34,7 @@ Dark mode
 </div>
 
 ### Want Mica?
-Recently I've found out a weird way [to get Mica](https://github.com/HuyHung1408/Fluent-Python-Calculator/blob/main/Mica%20for%20Calculator.md) . It's a bit of unofficially by the way, in the future update I will try to add Mica without other program by using [win32mica](https://github.com/martinet101/win32mica)
+Recently I've found out a weird way [to get Mica](https://github.com/HuyHung1408/Fluent-Python-Calculator/blob/main/Mica%20for%20Calculator.md) .
 
 ### Future development
  - [X] Improve button size
