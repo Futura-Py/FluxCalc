@@ -2,7 +2,6 @@ from tkinter import ttk
 from tkinter import *
 from BlurWindow.blurWindow import *
 import ctypes
-import sv_ttk
 
 def btnClick(numbers) :
     global operator
@@ -25,15 +24,15 @@ def btnEqualsInput():
      operator=""
 
 def change_theme():
-    if sv_ttk.get_theme() == "dark":
-        sv_ttk.set_theme('light')
+    if cal.tk.call("ttk::style", "theme", "use") == "sun-valley-dark":
+        cal.tk.call("set_theme", "light")
         bg_color = ttk.Style().lookup(".", "background")
         cal.wm_attributes("-transparent", bg_color)
         HWND = ctypes.windll.user32.GetForegroundWindow()
         GlobalBlur(HWND, Acrylic=True, Dark=False, hexColor=f"{bg_color}")
         cal.update()
     else:
-        sv_ttk.set_theme('dark')
+        cal.tk.call("set_theme", "dark")
         bg_color = ttk.Style().lookup(".", "background")
         cal.wm_attributes("-transparent", bg_color)
         HWND = ctypes.windll.user32.GetForegroundWindow()
@@ -45,7 +44,7 @@ cal.title('Fluent Calculator')
 
 operator=""
 tex_input= StringVar()
-cal.geometry('238x320')
+cal.geometry('238x338')
 cal.iconbitmap('Calculator.ico')
 
 cal.grid_columnconfigure(0,weight=1)
@@ -84,7 +83,9 @@ Subtraction=ttk.Button(cal, text="-", command=lambda:btnClick("-")). grid(row=3,
 Multiple=ttk.Button(cal, text="x", command=lambda:btnClick("*")). grid(row=4, column=3, padx= 8, pady= 0, ipadx=4, ipady=5)
 Divsion=ttk.Button(cal, text="÷", command=lambda:btnClick("/")). grid(row=5, column=3, padx= 8, pady= 0, ipadx=3, ipady=5)
 
-sv_ttk.set_theme("light")
+cal.tk.call("source", "sun-valley.tcl")
+cal.tk.call("set_theme", "light")
+
 #Min width for the calculator
 cal.update()
 cal.minsize(cal.winfo_width(), cal.winfo_height())
