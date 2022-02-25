@@ -1,2 +1,1 @@
 BlurWindow
-sv-ttk
