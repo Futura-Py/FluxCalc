@@ -33,9 +33,8 @@ Dark mode
 </div>
 
 ### Want Mica?
-Coming very soon!
 ![image](https://user-images.githubusercontent.com/86362423/156884532-749a4c4e-2bc2-4e0d-a265-91bc2eb79307.png)
-
+>Coming very soon!
 
 ### Future development
  - [X] Improve button size
