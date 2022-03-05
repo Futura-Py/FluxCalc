@@ -34,7 +34,7 @@ cal.title("Calculator")
 operator=""
 tex_input= StringVar()
 cal.geometry('238x338')
-cal.iconbitmap("Calculator.ico")
+cal.iconbitmap(".\Assets\Calculator.ico")
 
 cal.grid_columnconfigure(0,weight=1)
 cal.grid_columnconfigure(1,weight=1)
