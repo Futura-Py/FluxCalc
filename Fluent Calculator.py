@@ -1,8 +1,13 @@
+from itertools import cycle
 from tkinter import ttk
 from tkinter import *
-from BlurWindow.blurWindow import *
-import ctypes
+from ctypes import windll
 import darkdetect
+from win32mica import MICAMODE, ApplyMica
+
+def Backspace():
+    global operator
+    tex_input=tex_input[:-1]
 
 def btnClick(numbers) :
     global operator
@@ -23,22 +28,6 @@ def btnEqualsInput():
     except:
      tex_input.set("Error")
      operator=""
-
-def change_theme():
-    if cal.tk.call("ttk::style", "theme", "use") == "sun-valley-dark":
-        cal.tk.call("set_theme", "light")
-        bg_color = ttk.Style().lookup(".", "background")
-        cal.wm_attributes("-transparent", bg_color)
-        HWND = ctypes.windll.user32.GetForegroundWindow()
-        GlobalBlur(HWND, Acrylic=True, Dark=False, hexColor=f"{bg_color}")
-        cal.update()
-    else:
-        cal.tk.call("set_theme", "dark")
-        bg_color = ttk.Style().lookup(".", "background")
-        cal.wm_attributes("-transparent", bg_color)
-        HWND = ctypes.windll.user32.GetForegroundWindow()
-        GlobalBlur(HWND, Acrylic=True, Dark=True, hexColor=f"{bg_color}")
-        cal.update()
 
 cal = Tk()
 cal.title('Fluent Calculator')
@@ -77,10 +66,8 @@ btn6=ttk.Button(cal, text="6", command=lambda:btnClick(6)).grid(row=3, column=2,
 btn3=ttk.Button(cal, text="3", command=lambda:btnClick(3)).grid(row=4, column=2, padx= 0, pady= 0, ipadx=4, ipady=5)
 equal=ttk.Button(cal, text="=", style="Accent.TButton", command=btnEqualsInput).grid(row=5, column=2, padx= 10, pady= 0, ipadx=2, ipady=5)
 
-photo = PhotoImage(file = r"Assets.png")
-
 #Fourth Column
-backspace = ttk.Button(cal, image=photo).grid(row=1, column=3, padx=8, pady= 0, ipady= 4)
+backspace = ttk.Button(cal, text='', command=Backspace).grid(row=1, column=3, padx=8, pady= 0, ipady= 1)
 Addition=ttk.Button(cal, text="+",  command=lambda:btnClick("+")). grid(row=2, column=3, padx= 8, pady= 0, ipadx=3, ipady=5)
 Subtraction=ttk.Button(cal, text="-", command=lambda:btnClick("-")). grid(row=3, column=3, padx= 8, pady= 0, ipadx=4, ipady=5)
 Multiple=ttk.Button(cal, text="x", command=lambda:btnClick("*")). grid(row=4, column=3, padx= 8, pady= 0, ipadx=4, ipady=5)
@@ -96,19 +83,19 @@ x_cordinate = int((cal.winfo_screenwidth() / 2) - (cal.winfo_width() / 2))
 y_cordinate = int((cal.winfo_screenheight() / 2) - (cal.winfo_height() / 2))
 cal.resizable(False, False)
 
-bg_color = ttk.Style().lookup(".", "background")
-cal.wm_attributes("-transparent", bg_color)
-HWND = ctypes.windll.user32.GetForegroundWindow()
-if   darkdetect.isDark():
+if  darkdetect.isDark():
     cal.tk.call("set_theme", "dark")
     bg_color = ttk.Style().lookup(".", "background")
     cal.wm_attributes("-transparent", bg_color)
-    HWND = ctypes.windll.user32.GetForegroundWindow()
-    GlobalBlur(HWND, Acrylic=True, Dark=True, hexColor=f"{bg_color}")
+    HWND=windll.user32.GetParent(cal.winfo_id())
+    ApplyMica(HWND, ColorMode=MICAMODE.DARK)
     cal.update()
 else:
     cal.tk.call("set_theme", "light")
     bg_color = ttk.Style().lookup(".", "background")
-    GlobalBlur(HWND, Acrylic=True, Dark=False, hexColor=f"{bg_color}")
+    cal.wm_attributes("-transparent", bg_color)
+    HWND=windll.user32.GetParent(cal.winfo_id())
+    ApplyMica(HWND, ColorMode=MICAMODE.LIGHT)
+    cal.update()
 
 cal.mainloop()
