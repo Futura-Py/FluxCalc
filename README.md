@@ -1,6 +1,6 @@
 <div align="center">
  
-# Fluent-Python-Calculator <img align="left" src="https://github.com/HuyHung1408/Fluent-Python-Calculator/blob/main/Calculator.ico" height="38"></a> 
+# Fluent-Python-Calculator <img align="left" src="https://github.com/HuyHung1408/Fluent-Python-Calculator/blob/main/Assets/Calculator.ico" height="38"></a> 
 </div>
 
 **A simple Python calculator with Sun-Valley-ttk-theme**
@@ -18,7 +18,6 @@
 ![image](https://user-images.githubusercontent.com/86362423/151813306-3332ee04-f2df-461e-ab84-009af42f748f.png)
  </div>
 
-**Changing dark/light theme**: click at "M" button
 ### Dark/Light mode images 
 
 ![image](https://user-images.githubusercontent.com/86362423/153597631-fb2346b4-32ca-41a5-b855-218fa6826a7e.png)
@@ -34,7 +33,8 @@ Dark mode
 </div>
 
 ### Want Mica?
-Recently I've found out a weird way [to get Mica](https://github.com/HuyHung1408/Fluent-Python-Calculator/blob/main/Mica%20for%20Calculator.md) .
+![image](https://user-images.githubusercontent.com/86362423/156884532-749a4c4e-2bc2-4e0d-a265-91bc2eb79307.png)
+>Coming very soon!
 
 ### Future development
  - [X] Improve button size
@@ -43,7 +43,8 @@ Recently I've found out a weird way [to get Mica](https://github.com/HuyHung1408
  - [X] Add proper changing dark/light mode (thanks for [Timothy Malahy](https://github.com/TimothyMalahy))
  - [X] Change to exe? (done)
  - [X] Add icon
-
+ - [ ] Add backspace
+ 
 ### Other awesome repositories:
 - [TimerX](https://github.com/Futura-Py/TimerX)
 - [Sun-Valley-ttk-theme](https://github.com/rdbende/Sun-Valley-ttk-theme)
