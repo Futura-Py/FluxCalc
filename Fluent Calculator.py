@@ -4,9 +4,10 @@ from ctypes import windll
 import darkdetect
 from win32mica import MICAMODE, ApplyMica
 
-def Backspace():
+def backspace():
     global operator
-    tex_input=tex_input[:-1]
+    operator = operator[:-1]
+    tex_input.set(operator)
 
 def btnClick(numbers) :
     global operator
@@ -66,7 +67,7 @@ btn3=ttk.Button(cal, text="3", command=lambda:btnClick(3)).grid(row=4, column=2,
 equal=ttk.Button(cal, text="=", style="Accent.TButton", command=btnEqualsInput).grid(row=5, column=2, padx= 10, pady= 0, ipadx=2, ipady=5)
 
 #Fourth Column
-backspace = ttk.Button(cal, text='', command=Backspace).grid(row=1, column=3, padx=8, pady= 0, ipady= 1)
+backspace = ttk.Button(cal, text='', command=backspace).grid(row=1, column=3, padx=8, pady= 0, ipady= 1)
 Addition=ttk.Button(cal, text="+",  command=lambda:btnClick("+")). grid(row=2, column=3, padx= 8, pady= 0, ipadx=3, ipady=5)
 Subtraction=ttk.Button(cal, text="-", command=lambda:btnClick("-")). grid(row=3, column=3, padx= 8, pady= 0, ipadx=4, ipady=5)
 Multiple=ttk.Button(cal, text="x", command=lambda:btnClick("*")). grid(row=4, column=3, padx= 8, pady= 0, ipadx=4, ipady=5)
