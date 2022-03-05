@@ -1,4 +1,3 @@
-from itertools import cycle
 from tkinter import ttk
 from tkinter import *
 from ctypes import windll
@@ -30,7 +29,7 @@ def btnEqualsInput():
      operator=""
 
 cal = Tk()
-cal.title('Fluent Calculator')
+cal.title(".\Assets\Calculator.ico")
 
 operator=""
 tex_input= StringVar()
