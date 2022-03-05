@@ -29,7 +29,7 @@ def btnEqualsInput():
      operator=""
 
 cal = Tk()
-cal.title(".\Assets\Calculator.ico")
+cal.title("Calculator.ico")
 
 operator=""
 tex_input= StringVar()
