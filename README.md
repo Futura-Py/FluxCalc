@@ -43,7 +43,7 @@ Dark mode
  - [X] Add proper changing dark/light mode (thanks for [Timothy Malahy](https://github.com/TimothyMalahy))
  - [X] Change to exe? (done)
  - [X] Add icon
- - [ ] Add backspace
+ - [X] Add backspace
  
 ### Other awesome repositories:
 - [TimerX](https://github.com/Futura-Py/TimerX)
