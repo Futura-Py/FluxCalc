@@ -3,6 +3,7 @@ from tkinter import *
 from ctypes import windll
 import darkdetect
 from win32mica import MICAMODE, ApplyMica
+from sys import getwindowsversion
 
 def backspace():
     global operator
@@ -83,19 +84,25 @@ x_cordinate = int((cal.winfo_screenwidth() / 2) - (cal.winfo_width() / 2))
 y_cordinate = int((cal.winfo_screenheight() / 2) - (cal.winfo_height() / 2))
 cal.resizable(False, False)
 
-if  darkdetect.isDark():
-    cal.tk.call("set_theme", "dark")
-    bg_color = ttk.Style().lookup(".", "background")
-    cal.wm_attributes("-transparent", bg_color)
-    HWND=windll.user32.GetParent(cal.winfo_id())
-    ApplyMica(HWND, ColorMode=MICAMODE.DARK)
-    cal.update()
+if  getwindowsversion().build >= 22000:
+        if  darkdetect.isDark():
+            cal.tk.call("set_theme", "dark")
+            bg_color = ttk.Style().lookup(".", "background")
+            cal.wm_attributes("-transparent", bg_color)
+            HWND=windll.user32.GetParent(cal.winfo_id())
+            ApplyMica(HWND, ColorMode=MICAMODE.DARK)
+            cal.update()
+        else:
+            cal.tk.call("set_theme", "light")
+            bg_color = ttk.Style().lookup(".", "background")
+            cal.wm_attributes("-transparent", bg_color)
+            HWND=windll.user32.GetParent(cal.winfo_id())
+            ApplyMica(HWND, ColorMode=MICAMODE.LIGHT)
+            cal.update()
 else:
-    cal.tk.call("set_theme", "light")
-    bg_color = ttk.Style().lookup(".", "background")
-    cal.wm_attributes("-transparent", bg_color)
-    HWND=windll.user32.GetParent(cal.winfo_id())
-    ApplyMica(HWND, ColorMode=MICAMODE.LIGHT)
-    cal.update()
+        if darkdetect.isDark():
+            cal.tk.call("set_theme", "dark")
+            bg_color = ttk.Style().lookup(".", "background")
+            cal.wm_attributes("-transparent", bg_color)
 
 cal.mainloop()
