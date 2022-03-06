@@ -99,10 +99,21 @@ if  getwindowsversion().build >= 22000:
             HWND=windll.user32.GetParent(cal.winfo_id())
             ApplyMica(HWND, ColorMode=MICAMODE.LIGHT)
             cal.update()
-else:
+else: 
+        from BlurWindow.blurWindow import *
         if darkdetect.isDark():
             cal.tk.call("set_theme", "dark")
             bg_color = ttk.Style().lookup(".", "background")
             cal.wm_attributes("-transparent", bg_color)
+            HWND = ctypes.windll.user32.GetForegroundWindow()
+            GlobalBlur(HWND, Acrylic=True, Dark=True, hexColor=f"{bg_color}")
+            cal.update()
+        else:
+            cal.tk.call("set_theme", "light")
+            bg_color = ttk.Style().lookup(".", "background")
+            cal.wm_attributes("-transparent", bg_color)
+            HWND = ctypes.windll.user32.GetForegroundWindow()
+            GlobalBlur(HWND, Acrylic=True, Dark=False, hexColor=f"{bg_color}")
+            cal.update()
 
 cal.mainloop()
