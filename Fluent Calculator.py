@@ -36,7 +36,7 @@ cal.title("Fluent Calculator")
 operator=""
 tex_input= StringVar()
 cal.geometry('238x338')
-cal.iconbitmap(".\Assets\Calculator.ico")
+cal.iconbitmap("Calculator.ico")
 
 cal.grid_columnconfigure(0,weight=1)
 cal.grid_columnconfigure(1,weight=1)
