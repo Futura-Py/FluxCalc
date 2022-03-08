@@ -100,7 +100,7 @@ if  getwindowsversion().build >= 22000:
             ApplyMica(HWND, ColorMode=MICAMODE.LIGHT)
             cal.update()
 else: 
-        from BlurWindow.blurWindow import *
+        """from BlurWindow.blurWindow import *"""
         if darkdetect.isDark():
             cal.tk.call("set_theme", "dark")
             """bg_color = ttk.Style().lookup(".", "background")
