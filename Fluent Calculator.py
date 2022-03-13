@@ -78,7 +78,6 @@ cal.tk.call("source", "sun-valley.tcl")
 cal.tk.call("set_theme", "light")
 
 #Min width for the calculator
-cal.update()
 cal.minsize(cal.winfo_width(), cal.winfo_height())
 x_cordinate = int((cal.winfo_screenwidth() / 2) - (cal.winfo_width() / 2))
 y_cordinate = int((cal.winfo_screenheight() / 2) - (cal.winfo_height() / 2))
@@ -91,14 +90,14 @@ if  getwindowsversion().build >= 22000:
             cal.wm_attributes("-transparent", bg_color)
             HWND=windll.user32.GetParent(cal.winfo_id())
             ApplyMica(HWND, ColorMode=MICAMODE.DARK)
-            cal.update()
+            
         else:
             cal.tk.call("set_theme", "light")
             bg_color = ttk.Style().lookup(".", "background")
             cal.wm_attributes("-transparent", bg_color)
             HWND=windll.user32.GetParent(cal.winfo_id())
             ApplyMica(HWND, ColorMode=MICAMODE.LIGHT)
-            cal.update()
+            
 else: 
         """from BlurWindow.blurWindow import *"""
         if darkdetect.isDark():
