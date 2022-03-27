@@ -33,15 +33,14 @@ def btnEqualsInput():
 cal = Tk()
 cal.title("Fluent Calculator")
 
+cal.tk.call("source", "sun-valley.tcl")
+cal.tk.call("set_theme", "light")
+
 operator=""
 tex_input= StringVar()
 cal.geometry('238x338')
 cal.iconbitmap("Calculator.ico")
 
-cal.grid_columnconfigure(0,weight=1)
-cal.grid_columnconfigure(1,weight=1)
-cal.grid_columnconfigure(2,weight=1)
-cal.grid_columnconfigure(3,weight=1)
 
 #Entry to show result
 txtDisplay = ttk.Entry(cal, textvariable=tex_input, font='50', justify='right').grid(columnspan=4, pady=8, ipadx=9, ipady= 1)
@@ -74,9 +73,6 @@ Subtraction=ttk.Button(cal, text="-", command=lambda:btnClick("-")). grid(row=3,
 Multiple=ttk.Button(cal, text="x", command=lambda:btnClick("*")). grid(row=4, column=3, padx= 8, pady= 0, ipadx=4, ipady=5)
 Divsion=ttk.Button(cal, text="÷", command=lambda:btnClick("/")). grid(row=5, column=3, padx= 8, pady= 0, ipadx=3, ipady=5)
 
-cal.tk.call("source", "sun-valley.tcl")
-cal.tk.call("set_theme", "light")
-
 #Min width for the calculator
 cal.minsize(cal.winfo_width(), cal.winfo_height())
 x_cordinate = int((cal.winfo_screenwidth() / 2) - (cal.winfo_width() / 2))
@@ -106,13 +102,11 @@ else:
             cal.wm_attributes("-transparent", bg_color)
             HWND = ctypes.windll.user32.GetForegroundWindow()
             GlobalBlur(HWND, Acrylic=True, Dark=True, hexColor=f"{bg_color}")"""
-            cal.update()
         else:
             cal.tk.call("set_theme", "light")
             """bg_color = ttk.Style().lookup(".", "background")
             cal.wm_attributes("-transparent", bg_color)
             HWND = ctypes.windll.user32.GetForegroundWindow()
             GlobalBlur(HWND, Acrylic=True, Dark=False, hexColor=f"{bg_color}")"""
-            cal.update()
 
 cal.mainloop()
