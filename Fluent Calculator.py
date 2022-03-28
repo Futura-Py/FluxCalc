@@ -40,7 +40,7 @@ operator=""
 tex_input= StringVar()
 cal.geometry('238x338')
 cal.iconbitmap("Calculator.ico")
-
+cal.resizable(False, False)
 
 #Entry to show result
 txtDisplay = ttk.Entry(cal, textvariable=tex_input, font='50', justify='right').grid(columnspan=4, pady=8, ipadx=9, ipady= 1)
@@ -72,12 +72,6 @@ Addition=ttk.Button(cal, text="+",  command=lambda:btnClick("+")). grid(row=2, c
 Subtraction=ttk.Button(cal, text="-", command=lambda:btnClick("-")). grid(row=3, column=3, padx= 8, pady= 0, ipadx=5, ipady=5)
 Multiple=ttk.Button(cal, text="x", command=lambda:btnClick("*")). grid(row=4, column=3, padx= 8, pady= 0, ipadx=4, ipady=5)
 Divsion=ttk.Button(cal, text="÷", command=lambda:btnClick("/")). grid(row=5, column=3, padx= 8, pady= 0, ipadx=3, ipady=5)
-
-#Min width for the calculator
-cal.minsize(cal.winfo_width(), cal.winfo_height())
-x_cordinate = int((cal.winfo_screenwidth() / 2) - (cal.winfo_width() / 2))
-y_cordinate = int((cal.winfo_screenheight() / 2) - (cal.winfo_height() / 2))
-cal.resizable(False, False)
 
 if  getwindowsversion().build >= 22000:
         if  darkdetect.isDark():
