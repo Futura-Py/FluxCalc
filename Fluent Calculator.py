@@ -31,6 +31,7 @@ def btnEqualsInput():
      operator=""
 
 cal = Tk()
+cal.resizable(False, False)
 cal.title("Fluent Calculator")
 
 cal.tk.call("source", "sun-valley.tcl")
@@ -40,7 +41,36 @@ operator=""
 tex_input= StringVar()
 cal.geometry('238x338')
 cal.iconbitmap("Calculator.ico")
-cal.resizable(False, False)
+
+if  getwindowsversion().build >= 22000:
+        if  darkdetect.isDark():
+            cal.tk.call("set_theme", "dark")
+            bg_color = ttk.Style().lookup(".", "background")
+            cal.wm_attributes("-transparent", bg_color)
+            HWND=windll.user32.GetParent(cal.winfo_id())
+            ApplyMica(HWND, ColorMode=MICAMODE.DARK)
+            
+        else:
+            cal.tk.call("set_theme", "light")
+            bg_color = ttk.Style().lookup(".", "background")
+            cal.wm_attributes("-transparent", bg_color)
+            HWND=windll.user32.GetParent(cal.winfo_id())
+            ApplyMica(HWND, ColorMode=MICAMODE.LIGHT)
+            
+else: 
+        """from BlurWindow.blurWindow import *"""
+        if darkdetect.isDark():
+            cal.tk.call("set_theme", "dark")
+            """bg_color = ttk.Style().lookup(".", "background")
+            cal.wm_attributes("-transparent", bg_color)
+            HWND = ctypes.windll.user32.GetForegroundWindow()
+            GlobalBlur(HWND, Acrylic=True, Dark=True, hexColor=f"{bg_color}")"""
+        else:
+            cal.tk.call("set_theme", "light")
+            """bg_color = ttk.Style().lookup(".", "background")
+            cal.wm_attributes("-transparent", bg_color)
+            HWND = ctypes.windll.user32.GetForegroundWindow()
+            GlobalBlur(HWND, Acrylic=True, Dark=False, hexColor=f"{bg_color}")"""
 
 #Entry to show result
 txtDisplay = ttk.Entry(cal, textvariable=tex_input, font='50', justify='right').grid(columnspan=4, pady=8, ipadx=9, ipady= 1)
@@ -72,35 +102,5 @@ Addition=ttk.Button(cal, text="+",  command=lambda:btnClick("+")). grid(row=2, c
 Subtraction=ttk.Button(cal, text="-", command=lambda:btnClick("-")). grid(row=3, column=3, padx= 8, pady= 0, ipadx=5, ipady=5)
 Multiple=ttk.Button(cal, text="x", command=lambda:btnClick("*")). grid(row=4, column=3, padx= 8, pady= 0, ipadx=4, ipady=5)
 Divsion=ttk.Button(cal, text="÷", command=lambda:btnClick("/")). grid(row=5, column=3, padx= 8, pady= 0, ipadx=3, ipady=5)
-
-if  getwindowsversion().build >= 22000:
-        if  darkdetect.isDark():
-            cal.tk.call("set_theme", "dark")
-            bg_color = ttk.Style().lookup(".", "background")
-            cal.wm_attributes("-transparent", bg_color)
-            HWND=windll.user32.GetParent(cal.winfo_id())
-            ApplyMica(HWND, ColorMode=MICAMODE.DARK)
-            
-        else:
-            cal.tk.call("set_theme", "light")
-            bg_color = ttk.Style().lookup(".", "background")
-            cal.wm_attributes("-transparent", bg_color)
-            HWND=windll.user32.GetParent(cal.winfo_id())
-            ApplyMica(HWND, ColorMode=MICAMODE.LIGHT)
-            
-else: 
-        """from BlurWindow.blurWindow import *"""
-        if darkdetect.isDark():
-            cal.tk.call("set_theme", "dark")
-            """bg_color = ttk.Style().lookup(".", "background")
-            cal.wm_attributes("-transparent", bg_color)
-            HWND = ctypes.windll.user32.GetForegroundWindow()
-            GlobalBlur(HWND, Acrylic=True, Dark=True, hexColor=f"{bg_color}")"""
-        else:
-            cal.tk.call("set_theme", "light")
-            """bg_color = ttk.Style().lookup(".", "background")
-            cal.wm_attributes("-transparent", bg_color)
-            HWND = ctypes.windll.user32.GetForegroundWindow()
-            GlobalBlur(HWND, Acrylic=True, Dark=False, hexColor=f"{bg_color}")"""
 
 cal.mainloop()
