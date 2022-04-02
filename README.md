@@ -3,6 +3,8 @@
 # Fluent-Python-Calculator <img align="left" src="https://github.com/HuyHung1408/Fluent-Python-Calculator/blob/main/Calculator.ico" height="38"></a> 
 </div>
 
+## #StandWithUkraine
+
 **A simple Python calculator with Sun-Valley-ttk-theme**
 ![image](https://user-images.githubusercontent.com/86362423/157057525-10276250-3dbf-495a-933d-95e05ae09ae3.png)
   
