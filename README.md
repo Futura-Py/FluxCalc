@@ -30,6 +30,7 @@ Dark mode
 </div>
 
 ### Future development
+ - [ ] Big UI redesign coming very soon!
  - [X] Improve button size
  - [X] Add 'error' message into the app
  - [X] Improve UI (thanks for @sumeshir26, @not-nef, and @im-coder-lg)
