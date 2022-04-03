@@ -31,6 +31,11 @@ Light mode
 Dark mode
 </div>
 
+### WIP image:
+>Design may change in the future
+
+![Good](https://user-images.githubusercontent.com/86362423/161405860-4f660bfb-8d46-4c49-aa03-6aedd99a1ae0.png)
+
 ### Future development
  - [ ] Big UI redesign coming very soon!
  - [X] Improve button size
