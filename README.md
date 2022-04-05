@@ -14,7 +14,7 @@
 ## Works for:
 - Windows 10* and Windows 11.
 
->*Need the [Segoe UI Variable font](https://aka.ms/SegoeUIVariable) to work proprely and no Mica too!
+>*Need the [Segoe UI Variable font](https://drive.google.com/uc?export=download&id=1sW6SDHGVdmw7fobYIJfxuZOzWq64oEqe) to work proprely!
  </div>
 
 ### Dark/Light mode images 
