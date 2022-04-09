@@ -1,106 +1,129 @@
-from tkinter import ttk
-from tkinter import *
+from tkinter import BooleanVar, ttk, Tk, Label, StringVar
+import tkinter as tk
 from ctypes import windll
-import darkdetect
 from win32mica import MICAMODE, ApplyMica
-from sys import getwindowsversion
+import darkdetect
 
-def backspace():
+def btnClick(numbers, event=None):
     global operator
-    operator = operator[:-1]
-    tex_input.set(operator)
-
-def btnClick(numbers) :
-    global operator
+    tex_input2.set('')
     operator=operator+str(numbers)
     tex_input.set(operator)
 
 def btnClearDisplay():
     global operator
-    tex_input.set("")
+    tex_input2.set("")
+    tex_input.set("0")
     operator=""
 
-def btnEqualsInput():
+def btnEqualsInput(event=None):
     try:
       global operator
       sumup=str(eval(operator))
+      tex_input2.set(operator)
       tex_input.set(sumup)
       operator=""
     except:
      tex_input.set("Error")
      operator=""
 
-cal = Tk()
-cal.resizable(False, False)
-cal.title("Fluent Calculator")
+def backspace(event=None):
+    global operator
+    operator = operator[:-1]
+    tex_input2.set("")
+    tex_input.set(operator)
 
-cal.tk.call("source", "sun-valley.tcl")
-cal.tk.call("set_theme", "light")
+def aot():
+    if always_on_top.get() == 1:
+     root.attributes('-topmost', True)
+    else:
+     root.attributes('-topmost', False)
 
-operator=""
-tex_input= StringVar()
-cal.geometry('238x338')
-cal.iconbitmap("Calculator.ico")
+def square():
+    try:
+     global operator
+     tex_input2.set(operator + '²')
+     ans = float(operator)
+     squr = ans*ans
+     tex_input.set(str(squr))
+     operator =""
+    except:
+     tex_input2.set("")
+     tex_input.set("Error")
+     operator=""
 
+root=tk.Tk()
+root.resizable(False, False)
+root.geometry('318x480')
+root.tk.call("source", "sun-valley.tcl")
+root.tk.call("set_theme", "light")
+root.title('')
+root.iconbitmap(r'Calculator.ico')
+from sys import getwindowsversion
 if  getwindowsversion().build >= 22000:
         if  darkdetect.isDark():
-            cal.tk.call("set_theme", "dark")
+            root.tk.call("set_theme", "dark")
             bg_color = ttk.Style().lookup(".", "background")
-            cal.wm_attributes("-transparent", bg_color)
-            HWND=windll.user32.GetParent(cal.winfo_id())
+            root.wm_attributes("-transparent", bg_color)
+            HWND=windll.user32.GetParent(root.winfo_id())
             ApplyMica(HWND, ColorMode=MICAMODE.DARK)
-            
         else:
-            cal.tk.call("set_theme", "light")
+            root.tk.call("set_theme", "light")
             bg_color = ttk.Style().lookup(".", "background")
-            cal.wm_attributes("-transparent", bg_color)
-            HWND=windll.user32.GetParent(cal.winfo_id())
+            root.wm_attributes("-transparent", bg_color)
+            HWND=windll.user32.GetParent(root.winfo_id())
             ApplyMica(HWND, ColorMode=MICAMODE.LIGHT)
-            
 else: 
-        """from BlurWindow.blurWindow import *"""
+        #from BlurWindow.blurWindow import *
         if darkdetect.isDark():
-            cal.tk.call("set_theme", "dark")
-            """bg_color = ttk.Style().lookup(".", "background")
-            cal.wm_attributes("-transparent", bg_color)
-            HWND = ctypes.windll.user32.GetForegroundWindow()
-            GlobalBlur(HWND, Acrylic=True, Dark=True, hexColor=f"{bg_color}")"""
+            root.tk.call("set_theme", "dark")
+            #bg_color = ttk.Style().lookup(".", "background")
+            #root.wm_attributes("-transparent", bg_color)
+            #HWND = ctypes.windll.user32.GetForegroundWindow()
+            #GlobalBlur(HWND, Acrylic=True, Dark=True, hexColor=f"{bg_color}")
         else:
-            cal.tk.call("set_theme", "light")
-            """bg_color = ttk.Style().lookup(".", "background")
-            cal.wm_attributes("-transparent", bg_color)
-            HWND = ctypes.windll.user32.GetForegroundWindow()
-            GlobalBlur(HWND, Acrylic=True, Dark=False, hexColor=f"{bg_color}")"""
+            root.tk.call("set_theme", "light")
+            #bg_color = ttk.Style().lookup(".", "background")
+            #root.wm_attributes("-transparent", bg_color)
+            #HWND = ctypes.windll.user32.GetForegroundWindow()
+            #GlobalBlur(HWND, Acrylic=True, Dark=False, hexColor=f"{bg_color}")
+            
+operator=""
+tex_input= StringVar()
+tex_input2 = StringVar()
 
-#Entry to show result
-txtDisplay = ttk.Entry(cal, textvariable=tex_input, font='50', justify='right').grid(columnspan=4, pady=8, ipadx=9, ipady= 1)
+tex_input.set("0")
+txtDisplay = Label(root, textvariable=tex_input, font=('Segoe UI Variable Display Semibold','35'),anchor="e",width=11).place(x=0, y=60)
 
-#First Column
-btnM=ttk.Button(cal, text="(", command=lambda:btnClick('(')).grid(row=1, column=0, padx= 8, pady= 8, ipadx=7, ipady=1)
-btn7=ttk.Button(cal, text="7", command=lambda:btnClick(7)).grid(row=2, column=0, padx= 8, pady= 5, ipadx=4, ipady=5)
-btn4=ttk.Button(cal, text="4", command=lambda:btnClick(4)).grid(row=3, column=0, padx= 8, pady= 5, ipadx=4, ipady=5)
-btn1=ttk.Button(cal, text="1", command=lambda:btnClick(1)).grid(row=4, column=0, padx= 8, pady= 5, ipadx=5, ipady=5)
-btn1=ttk.Button(cal, text="0", command=lambda:btnClick(0)).grid(row=5, column=0, padx= 8, pady= 5, ipadx=4, ipady=5)
+txtDisplay2 =Label(root,textvariable=tex_input2, font=('Segoe UI Variable Display Semibold','15'),anchor="e",width=11, fg='#707476').place(x=162,y=30)
 
-#Second Column
-btnM=ttk.Button(cal, text=")", command=lambda:btnClick(')')).grid(row=1, column=1, padx= 8, pady= 8, ipadx=7, ipady=1)
-btn8=ttk.Button(cal, text="8", command=lambda:btnClick(8)).grid(row=2, column=1, padx= 0, pady= 0, ipadx=4, ipady=5)
-btn5=ttk.Button(cal, text="5", command=lambda:btnClick(5)).grid(row=3, column=1, padx= 0, pady= 0, ipadx=4, ipady=5)
-btn2=ttk.Button(cal, text="2", command=lambda:btnClick(2)).grid(row=4, column=1, padx= 0, pady= 0, ipadx=4, ipady=5)
-btnClear=ttk.Button(cal, text="C", style="Accent.TButton", command=btnClearDisplay).grid(row=5, column=1, padx= 10, pady= 0, ipadx=3, ipady=5)
+always_on_top = BooleanVar()
+alwaysontop=ttk.Checkbutton(root, text="", variable = always_on_top,onvalue=1, offvalue=0, style="Toggle.TButton",command=lambda:aot()).place(x=4, y= 148, height=53, width=76)
+btnsquare=ttk.Button(root, text="x²", command=lambda:square()).place(x=4, y= 203, height=53, width=76)
+btn7=ttk.Button(root, text="7", command=lambda:btnClick(7)).place(x=4, y= 258, height=53, width=76)
+btn4=ttk.Button(root, text="4", command=lambda:btnClick(4)).place(x=4, y= 313, height=53, width=76)
+btn1=ttk.Button(root, text="1", command=lambda:btnClick(1)).place(x=4, y= 368, height=53, width=76)
 
-#Thỉrd Column
-btnM=ttk.Button(cal, text=".", command=lambda:btnClick('.')).grid(row=1, column=2, padx= 8, pady= 8, ipadx=7, ipady=1)
-btn9=ttk.Button(cal, text="9", command=lambda:btnClick(9)).grid(row=2, column=2, padx= 0, pady= 0, ipadx=4, ipady=5)
-btn6=ttk.Button(cal, text="6", command=lambda:btnClick(6)).grid(row=3, column=2, padx= 0, pady= 0, ipadx=4, ipady=5)
-btn3=ttk.Button(cal, text="3", command=lambda:btnClick(3)).grid(row=4, column=2, padx= 0, pady= 0, ipadx=4, ipady=5)
-equal=ttk.Button(cal, text="=", style="Accent.TButton", command=btnEqualsInput).grid(row=5, column=2, padx= 10, pady= 0, ipadx=2, ipady=5)
+openbtn=ttk.Button(root, text="(", command=lambda:btnClick('(')).place(x=82, y= 148, height=53, width=76)
+btnClear=ttk.Button(root, text="C", command=btnClearDisplay).place(x=82, y= 203, height=53, width=76)
+btn8=ttk.Button(root, text="8", command=lambda:btnClick(8)).place(x=82, y= 258, height=53, width=76)
+btn5=ttk.Button(root, text="5", command=lambda:btnClick(5)).place(x=82, y= 313, height=53, width=76)
+btn2=ttk.Button(root, text="2", command=lambda:btnClick(2)).place(x=82, y= 368, height=53, width=76)
+btn0=ttk.Button(root, text="0", command=lambda:btnClick(0)).place(x=4, y= 423, height=53, width=154)
 
-#Fourth Column
-Backspace = ttk.Button(cal, text='', command=backspace).grid(row=1, column=3, padx=8, pady= 0, ipady= 1)
-Addition=ttk.Button(cal, text="+",  command=lambda:btnClick("+")). grid(row=2, column=3, padx= 8, pady= 0, ipadx=2, ipady=5)
-Subtraction=ttk.Button(cal, text="-", command=lambda:btnClick("-")). grid(row=3, column=3, padx= 8, pady= 0, ipadx=5, ipady=5)
-Multiple=ttk.Button(cal, text="x", command=lambda:btnClick("*")). grid(row=4, column=3, padx= 8, pady= 0, ipadx=4, ipady=5)
-Divsion=ttk.Button(cal, text="÷", command=lambda:btnClick("/")). grid(row=5, column=3, padx= 8, pady= 0, ipadx=3, ipady=5)
+closebtn=ttk.Button(root, text=")", command=lambda:btnClick(')')).place(x=160, y= 148, height=53, width=76)
+Backspace = ttk.Button(root, text='', command=backspace).place(x=160, y= 203, height=53, width=76)
+btn9=ttk.Button(root, text="9", command=lambda:btnClick(9)).place(x=160, y= 258, height=53, width=76)
+btn6=ttk.Button(root, text="6", command=lambda:btnClick(6)).place(x=160, y= 313, height=53, width=76)
+btn3=ttk.Button(root, text="3", command=lambda:btnClick(3)).place(x=160, y= 368, height=53, width=76)
+btndot=ttk.Button(root, text=".", command=lambda:btnClick('.')).place(x=160, y= 423, height=53, width=76)
 
-cal.mainloop()
+Divsion=ttk.Button(root, text="", command=lambda:btnClick("/")).place(x=238, y= 148, height=53, width=76)
+Multiple=ttk.Button(root, text="", command=lambda:btnClick("*")).place(x=238, y= 203, height=53, width=76)
+Subtraction=ttk.Button(root, text="", command=lambda:btnClick("-")).place(x=238, y= 258, height=53, width=76)
+Addition=ttk.Button(root, text="",  command=lambda:btnClick("+")).place(x=238, y= 313, height=53, width=76)
+equal=ttk.Button(root, text="", command=btnEqualsInput).place(x=238, y= 368, height=108, width=76)
+root.bind('<Return>', btnEqualsInput)
+root.bind('<BackSpace>', backspace)
+
+root.mainloop()
