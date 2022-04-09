@@ -3,6 +3,8 @@
 # Fluent-Python-Calculator <img align="left" src="https://github.com/HuyHung1408/Fluent-Python-Calculator/blob/main/Calculator.ico" height="38"></a> 
 </div>
 
+## #StandWithUkraine
+
 **A simple Python calculator with Sun-Valley-ttk-theme**
 ![image](https://user-images.githubusercontent.com/86362423/157057525-10276250-3dbf-495a-933d-95e05ae09ae3.png)
   
@@ -12,7 +14,7 @@
 ## Works for:
 - Windows 10* and Windows 11.
 
->*Need the [Segoe UI Variable font](https://aka.ms/SegoeUIVariable) to work proprely and no Mica too!
+>*Need the [Segoe UI Variable font](https://drive.google.com/uc?export=download&id=1sW6SDHGVdmw7fobYIJfxuZOzWq64oEqe) to work proprely!
  </div>
 
 ### Dark/Light mode images 
@@ -29,7 +31,13 @@ Light mode
 Dark mode
 </div>
 
+### WIP image:
+>Design may change in the future
+
+![Good](https://user-images.githubusercontent.com/86362423/161405860-4f660bfb-8d46-4c49-aa03-6aedd99a1ae0.png)
+
 ### Future development
+ - [ ] Big UI redesign coming very soon!
  - [X] Improve button size
  - [X] Add 'error' message into the app
  - [X] Improve UI (thanks for @sumeshir26, @not-nef, and @im-coder-lg)
