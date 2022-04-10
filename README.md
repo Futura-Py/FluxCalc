@@ -1,6 +1,6 @@
 <div align="center">
- 
-# Fluent-Python-Calculator <img align="left" src="https://github.com/HuyHung1408/Fluent-Python-Calculator/blob/main/Calculator.ico" height="38"></a> 
+    <img src="https://github.com/HuyHung1408/Fluent-Python-Calculator/blob/main/Calculator.ico" width="100"></a> 
+    <h1>Fluent Python Calculator<h1>
 </div>
 
 ## #StandWithUkraine
