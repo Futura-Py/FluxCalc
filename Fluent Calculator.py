@@ -53,10 +53,10 @@ def square():
      operator=""
 
 root=tk.Tk()
-root.resizable(False, False)
-root.geometry('318x480')
 root.tk.call("source", "sun-valley.tcl")
 root.tk.call("set_theme", "light")
+root.resizable(False, False)
+root.geometry('318x480')
 root.title('')
 root.iconbitmap(r'Calculator.ico')
 from sys import getwindowsversion
@@ -91,7 +91,6 @@ else:
 operator=""
 tex_input= StringVar()
 tex_input2 = StringVar()
-
 tex_input.set("0")
 txtDisplay = Label(root, textvariable=tex_input, font=('Segoe UI Variable Display Semibold','35'),anchor="e",width=11).place(x=0, y=60)
 
