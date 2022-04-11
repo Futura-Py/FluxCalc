@@ -3,6 +3,8 @@ import tkinter as tk
 from ctypes import windll
 from win32mica import MICAMODE, ApplyMica
 import darkdetect
+import sv_ttk
+import ntkutils
 
 def btnClick(numbers, event=None):
     global operator
@@ -53,40 +55,18 @@ def square():
      operator=""
 
 root=tk.Tk()
-root.tk.call("source", "sun-valley.tcl")
-root.tk.call("set_theme", "light")
 root.resizable(False, False)
 root.geometry('318x480')
 root.title('')
 root.iconbitmap(r'Calculator.ico')
-from sys import getwindowsversion
-if  getwindowsversion().build >= 22000:
-        if  darkdetect.isDark():
-            root.tk.call("set_theme", "dark")
-            bg_color = ttk.Style().lookup(".", "background")
-            root.wm_attributes("-transparent", bg_color)
-            HWND=windll.user32.GetParent(root.winfo_id())
-            ApplyMica(HWND, ColorMode=MICAMODE.DARK)
-        else:
-            root.tk.call("set_theme", "light")
-            bg_color = ttk.Style().lookup(".", "background")
-            root.wm_attributes("-transparent", bg_color)
-            HWND=windll.user32.GetParent(root.winfo_id())
-            ApplyMica(HWND, ColorMode=MICAMODE.LIGHT)
-else: 
-        #from BlurWindow.blurWindow import *
-        if darkdetect.isDark():
-            root.tk.call("set_theme", "dark")
-            #bg_color = ttk.Style().lookup(".", "background")
-            #root.wm_attributes("-transparent", bg_color)
-            #HWND = ctypes.windll.user32.GetForegroundWindow()
-            #GlobalBlur(HWND, Acrylic=True, Dark=True, hexColor=f"{bg_color}")
-        else:
-            root.tk.call("set_theme", "light")
-            #bg_color = ttk.Style().lookup(".", "background")
-            #root.wm_attributes("-transparent", bg_color)
-            #HWND = ctypes.windll.user32.GetForegroundWindow()
-            #GlobalBlur(HWND, Acrylic=True, Dark=False, hexColor=f"{bg_color}")
+
+if darkdetect.theme() == "Dark":
+    sv_ttk.set_theme("dark")
+    ntkutils.dark_title_bar(root)
+    ntkutils.blur_window_background(root)
+else:
+    sv_ttk.set_theme("light")
+    ntkutils.blur_window_background(root)    
             
 operator=""
 tex_input= StringVar()
