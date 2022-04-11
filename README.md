@@ -5,11 +5,12 @@
          <img src="https://user-images.githubusercontent.com/86362423/162710522-c40c4f39-a6b9-48bc-84bc-1c6b78319f01.png"
          width="200">
     </a>
-    
+    <a>
+         <img src="https://user-images.githubusercontent.com/86362423/162727921-b1daf52f-48e4-404e-8a8c-9079acce6a4d.png"
+         width="200">
+    </a>
 </div>
-    
-### #StandWithUkraine
-    
+
 **A simple Python calculator with Sun-Valley-ttk-theme**
 ![image](https://user-images.githubusercontent.com/86362423/162603939-0b13040e-2647-4d5f-985a-4229db78c8d3.png)
   
