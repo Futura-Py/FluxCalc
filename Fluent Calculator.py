@@ -1,7 +1,5 @@
-from tkinter import BooleanVar, ttk, Tk, Label, StringVar
+from tkinter import BooleanVar, ttk, Label, StringVar
 import tkinter as tk
-from ctypes import windll
-from win32mica import MICAMODE, ApplyMica
 import darkdetect
 import sv_ttk
 import ntkutils
