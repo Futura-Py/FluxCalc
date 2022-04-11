@@ -4,6 +4,8 @@
     <a href="https://github.com/Futura-Py/Fluent-Python-Calculator/releases">
          <img src="https://user-images.githubusercontent.com/86362423/162710522-c40c4f39-a6b9-48bc-84bc-1c6b78319f01.png"
          width="200">
+    </a>
+    
 </div>
     
 ### #StandWithUkraine
