@@ -45,5 +45,6 @@ Dark mode
  - [X] Add backspace (thanks for @RivanParmar for suggesting me) 
  
 ### Other awesome repositories:
-- [TimerX](https://github.com/Futura-Py/TimerX)
+- <a><img src="https://raw.githubusercontent.com/Futura-Py/TimerX/master/assets/logo_new.png"
+       width="20"> [TimerX](https://github.com/Futura-Py/TimerX)
 - [Sun-Valley-ttk-theme](https://github.com/rdbende/Sun-Valley-ttk-theme)
