@@ -20,7 +20,7 @@
 ## Works for:
 - Windows 10* and Windows 11.
 
->*Need the [Segoe UI Variable font](https://drive.google.com/uc?export=download&id=1sW6SDHGVdmw7fobYIJfxuZOzWq64oEqe) to work proprely!
+>*Need the Segoe UI Variable font to work proprely!
  </div>
 
 ### Future development
