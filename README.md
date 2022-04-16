@@ -15,7 +15,7 @@
 ![image](https://user-images.githubusercontent.com/86362423/162603939-0b13040e-2647-4d5f-985a-4229db78c8d3.png)
   
 ## About Fluent-Python-Calculator:
-  A very simple calculator with a modern UI made in Python thanks to the stunning [Sun-Valley-ttk-theme](https://github.com/rdbende/Sun-Valley-ttk-theme) and Segoe UI Variable font. This is my first project ever in my life so feel free to open an issue or pull requests to help me finish the project!
+  A very simple calculator with a modern UI made in Python thanks to the stunning [Sun-Valley-ttk-theme](https://github.com/rdbende/Sun-Valley-ttk-theme) and Segoe UI Variable font.
 
 ## Works for:
 - Windows 10* and Windows 11.
