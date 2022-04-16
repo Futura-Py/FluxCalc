@@ -2,7 +2,7 @@ from cx_Freeze import Executable, setup
 
 execuetables = [
     Executable(
-        "Fluent Calculator.py",
+        "FluentCalculator.py",
         icon="Calculator.ico",
         shortcut_name="Fluent Python Calculator",
         shortcut_dir="DesktopFolder",
