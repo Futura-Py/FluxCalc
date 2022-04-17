@@ -11,7 +11,7 @@
     </a>
 </div>
 <p align="center">
-  <img src="screenshot.png" height="500"/>
+  <img src="screenshot.png" width = "700"/>
 </p>
      
 ## About Fluent-Python-Calculator:
