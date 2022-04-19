@@ -20,7 +20,7 @@
 ### Supported Platforms:
 - Windows 10* and Windows 11.
 
->*Need the Segoe UI Variable font to work proprely!
+>*Need the Segoe UI Variable font to work properly!
  </div>
  
 ### Other awesome repositories:
