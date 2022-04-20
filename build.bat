@@ -1,4 +1,7 @@
+cd src
 rmdir /s /q dist
-pyinstaller FluentCalculator.py --onefile --windowed --collect-data sv_ttk --icon "Calculator.ico"
-del FluentCalculator.spec
-xcopy Calculator.ico dist
+pyinstaller main.py --onefile --windowed --collect-data sv_ttk --icon "icon.ico"
+del main.spec
+xcopy icon.ico dist
+cd dist
+ren main.exe FluxCalc.exe
