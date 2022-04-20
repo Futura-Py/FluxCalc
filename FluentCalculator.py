@@ -4,34 +4,34 @@ import darkdetect
 import sv_ttk
 import ntkutils
 
-def btnClick(numbers):
-    global operator
-    content2.set('')
-    operator=operator+str(numbers)
-    content.set(operator)
+calculation = ""
+
+def btnClick(key):
+    global calculation
+    calculation = calculation + str(key)
+    content.set(calculation)
 
 def btnClearDisplay():
-    global operator
+    global calculation
     content2.set("")
     content.set("0")
-    operator=""
+    calculation = ""
 
 def btnEqualsInput():
     try:
-        global operator
-        sumup=str(eval(operator))
-        content2.set(operator)
-        content.set(sumup)
-        operator=""
+        global calculation
+        content2.set(calculation)
+        content.set(eval(calculation))
+        calculation = ""
     except:
         content.set("Error")
-        operator=""
+        calculation = ""
 
 def backspace():
-        global operator
-        operator = operator[:-1]
+        global calculation
+        calculation = calculation[:-1]
         content2.set("")
-        content.set(operator)
+        content.set(calculation)
 
 def aot():
     if always_on_top.get() == 1:
@@ -41,13 +41,17 @@ def aot():
 
 def square():
     try:
-        global operator
-        content2.set(operator + '²')
-        ans = float(operator)
-        squr = ans*ans
-        operator =""
-        if str(squr).endswith(".0"): squr = str(squr).rstrip(".0")
-        content.set(str(squr))
+        global calculation
+        try:
+            int(calculation)
+            content2.set(calculation + '²')
+            calculation = eval("{}*{}".format(calculation, calculation))        
+            if str(calculation).endswith(".0"): calculation = str(calculation).rstrip(".0")
+            content.set(calculation)
+            calculation =""
+        except ValueError:
+            content2.set("feature still in")
+            content.set("development")
     except:
         content2.set("")
         content.set("Error")
