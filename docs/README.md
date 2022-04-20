@@ -1,7 +1,7 @@
 <div align="center">
-    <img src="https://github.com/HuyHung1408/Fluent-Python-Calculator/blob/main/Calculator.ico" width="100"></a> 
-    <h1>Fluent Python Calculator<h1>    
-    <a href="https://github.com/Futura-Py/Fluent-Python-Calculator/releases">
+    <img src="https://github.com/Futura-Py/FluxCalc/blob/main/Calculator.ico" width="100"></a> 
+    <h1>FluxCalc<h1>    
+    <a href="https://github.com/Futura-Py/FluxCalc/releases">
          <img src="https://user-images.githubusercontent.com/86362423/162710522-c40c4f39-a6b9-48bc-84bc-1c6b78319f01.png"
          width="200">
     </a>
@@ -14,7 +14,7 @@
   <img src="screenshot.png" width = "700"/>
 </p>
      
-## About Fluent-Python-Calculator:
+## About FluxCalc:
   A very simple calculator with a modern UI made in Python thanks to the stunning [Sun-Valley-ttk-theme](https://github.com/rdbende/Sun-Valley-ttk-theme) and Segoe UI Variable font.
 
 ### Supported Platforms:
