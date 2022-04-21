@@ -4,34 +4,7 @@ import darkdetect
 import sv_ttk
 import ntkutils
 
-calculation = ""
-
-def btnClick(key):
-    global calculation
-    calculation = calculation + str(key)
-    content.set(calculation)
-
-def btnClearDisplay():
-    global calculation
-    content2.set("")
-    content.set("0")
-    calculation = ""
-
-def btnEqualsInput():
-    try:
-        global calculation
-        content2.set(calculation)
-        content.set(eval(calculation))
-        calculation = ""
-    except:
-        content.set("Error")
-        calculation = ""
-
-def backspace():
-        global calculation
-        calculation = calculation[:-1]
-        content2.set("")
-        content.set(calculation)
+import calculations
 
 def aot():
     if always_on_top.get() == 1:
@@ -39,29 +12,36 @@ def aot():
     else:
         root.attributes('-topmost', False)
 
+def btnClick(key):
+    content.set(calculations._btnClick(key))
+
+def btnClearDisplay():
+    content2.set("")
+    content.set("0")
+    calculations.calculation = ""
+
+def backspace():
+    calculations.calculation = calculations.calculation[:-1]
+    content2.set("")
+    content.set(calculations.calculation)
+
 def square():
-    try:
-        global calculation
-        try:
-            int(calculation)
-            content2.set(calculation + '²')
-            calculation = eval("{}*{}".format(calculation, calculation))        
-            if str(calculation).endswith(".0"): calculation = str(calculation).rstrip(".0")
-            content.set(calculation)
-            calculation =""
-        except ValueError:
-            content2.set("feature still in")
-            content.set("development")
-    except:
-        content2.set("")
-        content.set("Error")
-        operator=""
+    result = calculations._square()
+    content.set(result[0])
+    content2.set(result[1])
+    calculations.calculation = ""
+
+def btnEqualsInput():
+    result = calculations._btnEqualsInput()
+    print(result)
+    content.set(result[0])
+    content2.set(result[1])
 
 root=tk.Tk()
 root.resizable(False, False)
 root.geometry('318x480')
 root.title('')
-root.iconbitmap(r'Calculator.ico')
+root.iconbitmap(r'icon.ico')
 ntkutils.placeappincenter(root)
 
 if darkdetect.theme() == "Dark":
@@ -72,10 +52,10 @@ else:
     sv_ttk.set_theme("light")
     ntkutils.blur_window_background(root)    
             
-operator=""
 always_on_top = BooleanVar()
 content= StringVar()
 content2 = StringVar()
+
 content.set("0")
 
 Display = Label(root, textvariable=content, font=('Segoe UI Variable Display Semibold','35'),anchor="e",width=11).place(x=0, y=60)
@@ -95,8 +75,8 @@ btn0=ttk.Button(root, text="0", command=lambda:btnClick(0)).place(x=4, y=423, he
 alwaysontop=ttk.Checkbutton(root, text="", variable = always_on_top,onvalue=1, offvalue=0, style="Toggle.TButton",command=lambda:aot()).place(x=4, y=148, height=53, width=76)
 openbtn=ttk.Button(root, text="(", command=lambda:btnClick('(')).place(x=82, y=148, height=53, width=76)
 closebtn=ttk.Button(root, text=")", command=lambda:btnClick(')')).place(x=160, y=148, height=53, width=76)
-btnClear=ttk.Button(root, text="C", command=btnClearDisplay).place(x=82, y= 203, height=53, width=76)
-Backspace = ttk.Button(root, text='', command=backspace).place(x=160, y=203, height=53, width=76)
+btnClear=ttk.Button(root, text="C", command=lambda:btnClearDisplay()).place(x=82, y= 203, height=53, width=76)
+Backspace = ttk.Button(root, text='', command=lambda:backspace()).place(x=160, y=203, height=53, width=76)
 btndot=ttk.Button(root, text=".", command=lambda:btnClick('.')).place(x=160, y=423, height=53, width=76)
 
 Divsion=ttk.Button(root, text="", command=lambda:btnClick("/")).place(x=238, y=148, height=53, width=76)
@@ -104,7 +84,7 @@ Multiple=ttk.Button(root, text="", command=lambda:btnClick("*")).place(x=238,
 Subtraction=ttk.Button(root, text="", command=lambda:btnClick("-")).place(x=238, y=258, height=53, width=76)
 Addition=ttk.Button(root, text="",  command=lambda:btnClick("+")).place(x=238, y=313, height=53, width=76)
 btnsquare=ttk.Button(root, text="x²", command=lambda:square()).place(x=4, y=203, height=53, width=76)
-equal=ttk.Button(root, text="", command=btnEqualsInput).place(x=238, y=368, height=108, width=76)
+equal=ttk.Button(root, text="", command=lambda:btnEqualsInput()).place(x=238, y=368, height=108, width=76)
 
 root.bind('<Return>', btnEqualsInput)
 root.bind('<BackSpace>', backspace)
