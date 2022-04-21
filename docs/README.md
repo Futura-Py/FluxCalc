@@ -1,5 +1,5 @@
 <div align="center">
-    <img src="https://github.com/Futura-Py/FluxCalc/blob/main/Calculator.ico" width="100"></a> 
+    <img src="https://raw.githubusercontent.com/Futura-Py/FluxCalc/main/src/icon.ico" width="100"></a> 
     <h1>FluxCalc<h1>    
     <a href="https://github.com/Futura-Py/FluxCalc/releases">
          <img src="https://user-images.githubusercontent.com/86362423/162710522-c40c4f39-a6b9-48bc-84bc-1c6b78319f01.png"
