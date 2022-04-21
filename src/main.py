@@ -4,7 +4,7 @@ import darkdetect
 import sv_ttk
 import ntkutils
 
-import calculations
+import calculations as c
 
 def aot():
     if always_on_top.get() == 1:
@@ -13,26 +13,26 @@ def aot():
         root.attributes('-topmost', False)
 
 def btnClick(key):
-    content.set(calculations._btnClick(key))
+    content.set(c._btnClick(key))
 
 def btnClearDisplay():
     content2.set("")
     content.set("0")
-    calculations.calculation = ""
+    c.calculation = ""
 
 def backspace():
-    calculations.calculation = calculations.calculation[:-1]
+    c.calculation = c.calculation[:-1]
     content2.set("")
-    content.set(calculations.calculation)
+    content.set(c.calculation)
 
 def square():
-    result = calculations._square()
+    result = c._square()
     content.set(result[0])
     content2.set(result[1])
-    calculations.calculation = ""
+    c.calculation = ""
 
 def btnEqualsInput():
-    result = calculations._btnEqualsInput()
+    result = c._btnEqualsInput()
     print(result)
     content.set(result[0])
     content2.set(result[1])
