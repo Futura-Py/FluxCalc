@@ -1,4 +1,19 @@
+import strsplit
+
 calculation = ""
+
+def bracketcheck():
+    global calculation
+    if "(" in calculation:
+        for i in range(10):
+            if strsplit.before(calculation, "(").endswith(str(i)):
+                calculation = strsplit.before(calculation, "(") + "*" + str(eval(strsplit.inbetween(calculation, "(", ")"))) + strsplit.after(calculation, ")")
+        if "(" in calculation and strsplit.before(calculation, "(") == "":
+            calculation = strsplit.after(calculation, "(")
+            calculation = str(eval(strsplit.before(calculation, ")"))) + strsplit.after(calculation, ")")
+        bracketcheck()
+    else: pass
+
 
 def _btnClick(key):
     global calculation
@@ -6,7 +21,9 @@ def _btnClick(key):
     return calculation
 
 def _btnEqualsInput():
+    global calculation
     try:
+        bracketcheck()
         return [eval(calculation), calculation]
     except:
         return ["Error", ""]

@@ -33,7 +33,6 @@ def square():
 
 def btnEqualsInput():
     result = c._btnEqualsInput()
-    print(result)
     content.set(result[0])
     content2.set(result[1])
 
