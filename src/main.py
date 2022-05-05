@@ -20,7 +20,7 @@ def btnClearDisplay():
     content.set("0")
     c.calculation = ""
 
-def backspace():
+def backspace(event=None):
     c.calculation = c.calculation[:-1]
     content2.set("")
     content.set(c.calculation)
@@ -31,7 +31,7 @@ def square():
     content2.set(result[1])
     c.calculation = ""
 
-def btnEqualsInput():
+def btnEqualsInput(event=None):
     result = c._btnEqualsInput()
     content.set(result[0])
     content2.set(result[1])
