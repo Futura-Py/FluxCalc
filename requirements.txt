@@ -4,3 +4,4 @@ darkdetect
 ntkutils >= 2.2.1
 pyinstaller
 strsplit
+sv_ttk
