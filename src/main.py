@@ -3,17 +3,8 @@ import tkinter as tk
 import darkdetect
 import sv_ttk
 import ntkutils
-import tempfile
+
 import calculations as c
-
-ICON = (b'\x00\x00\x01\x00\x01\x00\x10\x10\x00\x00\x01\x00\x08\x00h\x05\x00\x00'
-        b'\x16\x00\x00\x00(\x00\x00\x00\x10\x00\x00\x00 \x00\x00\x00\x01\x00'
-        b'\x08\x00\x00\x00\x00\x00@\x05\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
-        b'\x00\x01\x00\x00\x00\x01') + b'\x00'*1282 + b'\xff'*64
-
-_, ICON_PATH = tempfile.mkstemp()
-with open(ICON_PATH, 'wb') as icon_file:
-    icon_file.write(ICON)
 
 def aot():
     if always_on_top.get() == 1:
@@ -49,7 +40,7 @@ root=tk.Tk()
 root.resizable(False, False)
 root.geometry('318x480')
 root.title('')
-root.iconbitmap(default=ICON_PATH)
+root.iconbitmap(r'icon.ico')
 ntkutils.placeappincenter(root)
 
 if darkdetect.theme() == "Dark":
