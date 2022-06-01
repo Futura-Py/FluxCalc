@@ -25,6 +25,8 @@ def _btnEqualsInput():
     try:
         bracketcheck()
         return [eval(calculation), calculation]
+    except ZeroDivisionError:
+        return ["r u dumb", ""]
     except:
         return ["Error", ""]
 
