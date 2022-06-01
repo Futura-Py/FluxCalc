@@ -40,4 +40,7 @@ def _square():
         if str(squared).endswith(".0"): squared = str(squared).rstrip(".0")
         return [squared, calculation + '²']
     except ValueError:
-        return ["development", "feature still in"]
+        if not calculation == "":
+            return ["development", "feature still in"]
+        else:
+            return ["0", ""]
