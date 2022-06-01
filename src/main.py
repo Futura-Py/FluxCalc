@@ -1,11 +1,10 @@
 from tkinter import BooleanVar, ttk, Label, StringVar
 import tkinter as tk
-import darkdetect
-import sv_ttk
-import ntkutils
+import darkdetect, sv_ttk, ntkutils
 
 import calculations as c
 
+#region functions
 def aot():
     if always_on_top.get() == 1:
         root.attributes('-topmost', True)
@@ -35,7 +34,9 @@ def btnEqualsInput(event=None):
     result = c._btnEqualsInput()
     content.set(result[0])
     content2.set(result[1])
+#endregion
 
+#region window
 root=tk.Tk()
 root.resizable(False, False)
 root.geometry('318x480')
@@ -49,14 +50,14 @@ if darkdetect.theme() == "Dark":
     ntkutils.blur_window_background(root)
 else:
     sv_ttk.set_theme("light")
-    ntkutils.blur_window_background(root)    
+    ntkutils.blur_window_background(root) 
+#endregion   
             
 always_on_top = BooleanVar()
-content= StringVar()
+content= StringVar(value="0")
 content2 = StringVar()
 
-content.set("0")
-
+#region widgets
 Display = Label(root, textvariable=content, font=('Segoe UI Variable Display Semibold','35'),anchor="e",width=11).place(x=0, y=60)
 Display2 =Label(root,textvariable=content2, font=('Segoe UI Variable Display Semibold','15'),anchor="e",width=11, fg='#707476').place(x=162,y=30)
 
@@ -84,6 +85,7 @@ Subtraction=ttk.Button(root, text="", command=lambda:btnClick("-")).place(x=2
 Addition=ttk.Button(root, text="",  command=lambda:btnClick("+")).place(x=238, y=313, height=53, width=76)
 btnsquare=ttk.Button(root, text="x²", command=lambda:square()).place(x=4, y=203, height=53, width=76)
 equal=ttk.Button(root, text="", command=lambda:btnEqualsInput()).place(x=238, y=368, height=108, width=76)
+#endregion
 
 root.bind('<Return>', btnEqualsInput)
 root.bind('<BackSpace>', backspace)
