@@ -1,7 +1,7 @@
-from tkinter import BooleanVar, ttk, Label, StringVar
+from tkinter import BooleanVar, ttk, Label, StringVar, messagebox
 import tkinter as tk
 import darkdetect, sv_ttk, ntkutils
-
+import time
 import calculations as c
 
 #region functions
@@ -16,7 +16,7 @@ def btnClick(key):
 
 def btnClearDisplay():
     content2.set("")
-    content.set("0")
+    content.set("")
     c.calculation = ""
 
 def backspace(event=None):
@@ -30,10 +30,34 @@ def square():
     content2.set(result[1])
     c.calculation = ""
 
+x = StringVar
+x = 0
 def btnEqualsInput(event=None):
+    global x
     result = c._btnEqualsInput()
     content.set(result[0])
     content2.set(result[1])
+    if content.get() == 'r u dumb':
+        x = x + 1
+        if x == 2:
+            content.set("")
+            c.calculation = ""
+            messagebox.showerror("hey!", "Stop dividing by zero!")
+        if x == 3:
+            content.set("")
+            c.calculation = ""
+            messagebox.showerror("hey!", "Seriously? Stop")
+        if x == 4:
+            content.set("")
+            c.calculation = ""
+            messagebox.showerror("Error", "FluxCalc will shut down if there is one more division by zero")
+        if x == 5:
+            content.set("")
+            c.calculation = ""
+            messagebox.showerror("Error", "FluxCalc will shut down in 5 seconds")
+            time.sleep(5)
+            root.destroy()
+            
 #endregion
 
 #region window
@@ -54,7 +78,7 @@ else:
 #endregion   
             
 always_on_top = BooleanVar()
-content= StringVar(value="0")
+content= StringVar()
 content2 = StringVar()
 
 #region widgets
