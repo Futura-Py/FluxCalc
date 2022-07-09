@@ -111,7 +111,24 @@ btnsquare=ttk.Button(root, text="x²", command=lambda:square()).place(x=4, y=203
 equal=ttk.Button(root, text="", command=lambda:btnEqualsInput()).place(x=238, y=368, height=108, width=76)
 #endregion
 
+#Keyboard binding
 root.bind('<Return>', btnEqualsInput)
 root.bind('<BackSpace>', backspace)
-
+root.bind("1", lambda e:btnClick(1))
+root.bind("2", lambda e:btnClick(2))
+root.bind("3", lambda e:btnClick(3))     #Please ignore this long piece of code :)
+root.bind("4", lambda e:btnClick(4))
+root.bind("5", lambda e:btnClick(5))
+root.bind("6", lambda e:btnClick(6))
+root.bind("7", lambda e:btnClick(7))
+root.bind("8", lambda e:btnClick(8))
+root.bind("9", lambda e:btnClick(9))
+root.bind("0", lambda e:btnClick(0))
+root.bind("<+>", lambda e:btnClick("+"))
+root.bind("-", lambda e:btnClick("-"))
+root.bind("<*>", lambda e:btnClick("*"))
+root.bind("/", lambda e:btnClick("/"))
+root.bind("=", lambda e:btnEqualsInput())
+root.bind("(", lambda e:btnClick("("))
+root.bind(")", lambda e:btnClick(")"))
 root.mainloop()
