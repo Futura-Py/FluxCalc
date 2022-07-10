@@ -3,6 +3,7 @@ import tkinter as tk
 import darkdetect, sv_ttk, ntkutils
 import time
 import calculations as c
+import webbrowser
 
 #region functions
 def aot():
@@ -46,7 +47,11 @@ def btnEqualsInput(event=None):
         if x == 3:
             content.set("")
             c.calculation = ""
-            messagebox.showerror("hey!", "Seriously? Stop")
+            e = messagebox.askyesno("hey!", "Seriously? Stop")
+            if e == 'yes':
+                pass
+            else:
+                webbrowser.open('https://www.youtube.com/watch?v=dQw4w9WgXcQ')
         if x == 4:
             content.set("")
             c.calculation = ""
