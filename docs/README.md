@@ -17,6 +17,10 @@
 ## About FluxCalc:
   A very simple calculator with a modern UI made in Python thanks to the stunning [Sun-Valley-ttk-theme](https://github.com/rdbende/Sun-Valley-ttk-theme) and Segoe UI Variable font.
 
+### Usage:
+- Ctrl + M to disable/enable Mica (only for Windows 11). 
+>Disabled Mica by default since users reported some issue with it.
+
 ### Supported Platforms:
 - Windows 10* and Windows 11.
 
