@@ -1,9 +1,9 @@
 from tkinter import BooleanVar, ttk, Label, StringVar, messagebox
 import tkinter as tk
 import darkdetect, sv_ttk, ntkutils
-import time
 import calculations as c
 import webbrowser
+import json
 
 #region functions
 def aot():
@@ -39,7 +39,7 @@ def btnEqualsInput(event=None):
     content.set(result[0])
     content2.set(result[1])
     if content.get() == 'r u dumb':
-        x = x + 1
+        x += 1
         if x == 2:
             content.set("")
             c.calculation = ""
@@ -60,9 +60,15 @@ def btnEqualsInput(event=None):
             content.set("")
             c.calculation = ""
             messagebox.showerror("Error", "FluxCalc will shut down in 5 seconds")
-            time.sleep(5)
             root.destroy()
-            
+
+def updateConfig():
+    with open("config.json", "w") as jsonfile:
+        json.dump(data, jsonfile)
+        jsonfile.close()
+
+with open("config.json", "r") as config:
+    data = json.load(config)
 #endregion
 
 #region window
@@ -71,15 +77,31 @@ root.resizable(False, False)
 root.geometry('318x480')
 root.title('')
 root.iconbitmap(r'icon.ico')
-ntkutils.placeappincenter(root)
 
 if darkdetect.theme() == "Dark":
     sv_ttk.set_theme("dark")
     ntkutils.dark_title_bar(root)
-    ntkutils.blur_window_background(root)
 else:
     sv_ttk.set_theme("light")
-    ntkutils.blur_window_background(root) 
+
+def setmica(event=None):
+    if data['mica'] == 'True':
+        data['mica'] = 'False'
+        micaval = "Off"
+    else:
+        data['mica'] = 'True'
+        micaval = "On"
+    
+    updateConfig()
+    content2.set("Mica: " + micaval)
+
+if data['mica'] == 'True':
+    ntkutils.blur_window_background(root)
+    if darkdetect.theme() == "Dark":
+        ntkutils.dark_title_bar(root)
+else:
+    pass
+
 #endregion   
             
 always_on_top = BooleanVar()
@@ -121,7 +143,7 @@ root.bind('<Return>', btnEqualsInput)
 root.bind('<BackSpace>', backspace)
 root.bind("1", lambda e:btnClick(1))
 root.bind("2", lambda e:btnClick(2))
-root.bind("3", lambda e:btnClick(3))     #Please ignore this long piece of code :)
+root.bind("3", lambda e:btnClick(3))
 root.bind("4", lambda e:btnClick(4))
 root.bind("5", lambda e:btnClick(5))
 root.bind("6", lambda e:btnClick(6))
@@ -136,4 +158,7 @@ root.bind("/", lambda e:btnClick("/"))
 root.bind("=", lambda e:btnEqualsInput())
 root.bind("(", lambda e:btnClick("("))
 root.bind(")", lambda e:btnClick(")"))
+root.bind('<Control-m>', setmica)
+#endregion
+
 root.mainloop()
